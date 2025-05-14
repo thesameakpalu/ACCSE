@@ -122,11 +122,11 @@ function Header() {
     return(
         <>
                         {/* LARGE SCREEN HEADER--ALL ELEMENTS ON THE HEADER FOR BIG SCREENS */}
-          <div ref={headerRef} className={`mainContainer mx-auto hidden md:block md:fixed z-40 w-full transition-opacity duration-500
+          <div ref={headerRef} className={`mainContainer mx-auto hidden  md:block md:fixed z-40 w-full transition-opacity duration-500
                 ${isVisible ? "opacity-100" : "opacity-0"} 
-                ${isFixed ? "bg-white shadow-lg" : (isHomePage ? "bg-transparent" : "bg-white shadow-lg")}
+                ${isFixed ? "bg-white shadow-lg" : (isHomePage ? "bg-transparent " : "bg-white shadow-lg")}
               `} >
-                <div className="flex justify-between 2xl:justify-center 2xl:gap-[1200px] px-10 md:py-2 lg:py-4 2xl:py-6 items-center  bg-white"> {/*SOCIAL MEDIA ICONS AND DONATE BUTTON */}
+                <div className="flex justify-between 2xl:justify-center 2xl:gap-[1200px] px-10 md:py-2 lg:py-3 2xl:py-6 items-center  bg-white"> {/*SOCIAL MEDIA ICONS AND DONATE BUTTON */}
                         
                          <div className='flex h-5 md:gap-1 '> 
                                         {/*FACEBOOK ICON */}
@@ -168,7 +168,7 @@ function Header() {
                         </div>
                             
                 </div>
-      <div className="Header flex items-center justify-center md:gap-8 lg:gap-10 xl:gap-20 2xl:gap-52 mx-10 w-full">
+      <div className="Header flex items-center justify-center  md:gap-8 lg:gap-10 xl:gap-20 2xl:gap-52 mx-10 w-full">
         {/* Logo */}
         <div className="header-logo">
           <img className="md:h-20 md:w-36 lg:h-28 " src={logo} alt="Logo" />
@@ -176,10 +176,10 @@ function Header() {
 
         {/* Navigation */}
         <nav className="bg-black/30 rounded-full md:px-6 lg:px-8 md:py-2 lg:py-3 xl:py-3 xl:px-10 md:mr-3 lg:mr-5 ">
-          <ul className="flex lg:gap-x-10 md:gap-x-5 font-Lato font-bold lg:text-xl md:text-base text-white relative">
+          <ul className="flex lg:gap-x-10 md:gap-x-5 font-Lato  font-bold lg:text-xl md:text-base text-white relative">
             {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/Projects" }, { name: "News", path: "/Projects" }, { name: "Documents", path: "/Projects" },].map((item) => (
               <Link key={item.name} to={item.path}>
-                <li className={`relative group ${location.pathname === item.path ? "" : ""}`}>
+                <li className={`relative group hover:text-[#EFA51E] ${location.pathname === item.path ? "" : ""}`}>
                   {item.name}
                   <span
                     className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
@@ -209,12 +209,12 @@ function Header() {
                   >
 
              {/* Trigger */}
-         <div className="relative z-10 font-Lato font-bold">Regional Offices</div>
+         <div className="relative z-10 font-Lato font-bold hover:text-[#EFA51E]">Regional Offices</div>
 
             {/* Invisible bridge */}
             <div className="absolute left-0 top-full h-6 w-full z-0"></div>
               <span
-                className={`absolute left-0 bottom-0 h-[2px] bg-black transition-all duration-300 
+                className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
                     ${location.pathname.startsWith("/innovators") ? "w-full" : "w-0 group-hover:w-full"}`}
               ></span>
               
@@ -275,7 +275,7 @@ function Header() {
 
                                             {/*SMALL SCREEN HEADER */}
 
-                                            <div ref={headerRef} className={`main container mx-auto block md:hidden fixed z-40 transition-opacity duration-500  
+            <div ref={headerRef} className={`main w-full mx-auto block md:hidden fixed z-40 transition-opacity duration-500  
                  ${isVisible ? "opacity-100" : "opacity-0"} 
                  ${isFixed ? "bg-white shadow-lg" : (isHomePage ? "bg-transparent" : "bg-white shadow-lg")}`}>
   <div className="headerSmallScreen flex justify-between items-center mx-auto max-w-[90%]"> 
@@ -434,12 +434,12 @@ function Header() {
                         
                        </div>
 
-                    <div className="flex justify-center gap-10">
+                    <div className="flex justify-center gap-20">
                              <button className="bg-[#1D7948] text-sm text-white font-Inter rounded-md px-2 py-1 ">Donate</button>
                              
-        <button className='font-ISsans text-[10px] text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110'>
-          Contact Us
-        </button>
+                            <button className='font-ISsans text-[10px] text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110'>
+                              Contact Us
+                            </button>
       
 
                         </div>

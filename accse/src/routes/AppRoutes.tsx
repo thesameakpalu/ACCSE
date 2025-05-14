@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import Home from "../pages/Home";
 
 const  routeTitles: Record<string, string> = {
-    '/': 'Home | YClip',
+    '/': 'Home | ACCSE',
     '/about': 'About | YClip',
     '/innovators': 'Innovators | YClip',
     '/projects': 'Projects | YClip',

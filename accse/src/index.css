@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
@@ -15,13 +16,15 @@
     --font-PlayFair: "Playfair", serif;
     --font-playball: "Playball", serif;
     --font-Inter: "Inter", sans-serif;
+     --font-Roboto: "Roboto", sans-serif;
+     --breakpoint-ms: 23.4rem;
 
   }
 
 
   @layer utilities {
     .heroImg {
-      mask: linear-gradient(to bottom, #000 88%, transparent);
+      mask: linear-gradient(to bottom, #000 90%, transparent);
     }
   }
 
