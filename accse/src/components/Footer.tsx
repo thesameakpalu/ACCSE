@@ -1,134 +1,60 @@
-import { Link, useLocation } from "react-router-dom";
-import { useState, useEffect, useRef } from "react";
-import { FaChevronRight } from "react-icons/fa";
-import { HiMenu, HiX } from 'react-icons/hi';
-import logo from '/src/assets/images/logo.webp';
+import footerLogo from '/src/assets/images/logo.webp';
 
 
 
-function Header() {
-
-            {/*FUNCTION FOR TOGGLING SMALL SCREEN NAVBAR */}
-            const [isOpen,setIsOpen] = useState(false);
-
-            const toggleNavbar = () =>{
-              setIsOpen(!isOpen);
-            };
-
-            const [showCohorts, setShowCohorts] = useState(false);
-    const [activeCohort, setActiveCohort] = useState<string | null>(null);
-
-
-           
-
-            const location = useLocation();  // Get current route
-
-            
-
-            const cohorts: Record<string, string[]> = {
-                "Cohort 1": ["Climate Smart Agriculture", "Good Health & Well Being", "Zero Emission Transportation", "Circular Economy", "Biodiversity Conservation", "Water & Sanitation"],
-                // "Cohort 2": ["Group 1", "Group 2", "Group 3", "Group 4", "Group 5", "Group 6"],
-                // "Cohort 3": ["Group 1", "Group 2", "Group 3", "Group 4", "Group 5", "Group 6"],
-              };
-            
-                            const [openDropdown, setOpenDropdown] = useState(false);
-                const [openSubDropdown, setOpenSubDropdown] = useState<string | null>(null);
-                const dropdownRef = useRef<HTMLLIElement>(null);
-                const [isNearRightEdge, setIsNearRightEdge] = useState(false);
-
-                useEffect(() => {
-                    if (dropdownRef.current) {
-                    const rect = dropdownRef.current.getBoundingClientRect();
-                    setIsNearRightEdge(window.innerWidth - rect.right < 200);
-                    }
-                }, [openDropdown]);       
-
-                
-                // const [isNavbarOpen, setIsNavbarOpen] = useState(false);
-                // const [scrollY, setScrollY] = useState(0);
-                const [isFixed, setIsFixed] = useState(false);
-                const headerRef = useRef(null);
-              
-                
-
-                const [isVisible, setIsVisible] = useState(true);
-
-
-              
-                useEffect(() => {
-                  const handleScroll = () => {
-                    if (!headerRef.current) return;
-                
-                    let heroSection = null;
-                    let heroHeight = 0;
-                    let isMobile = window.innerWidth < 768; // Check if mobile view
-                
-                    if (window.innerWidth >= 768) {
-                      // Desktop Mode
-                      heroSection = document.getElementById("hero-section");
-                      if (!heroSection) {
-                        console.warn("Desktop Hero section not found");
-                        return;
-                      }
-                    } else {
-                      // Mobile Mode
-                      heroSection = document.getElementById("hero-section-mobile");
-                      if (!heroSection) {
-                        console.warn("Mobile Hero section not found");
-                        return;
-                      }
-                    }
-                
-                    heroHeight = heroSection.offsetHeight;
-                    // console.log("Detected Hero Height:", heroHeight);
-                
-                    const scrollY = window.scrollY;
-                    // console.log(isMobile ? "Mobile Scroll Y:" : "Desktop Scroll Y:", scrollY);
-                
-                    // Separate logic for mobile and desktop
-                    if (isMobile) {
-                      if (scrollY === 0) {
-                        setIsVisible(true);
-                        setIsFixed(false);
-                      } else if (scrollY < heroHeight - 200) { 
-                        setIsVisible(false);
-                      } else {
-                        setIsVisible(true);
-                        setIsFixed(true);
-                      }
-                    } else {
-                      if (scrollY === 0) {
-                        setIsVisible(true);
-                        setIsFixed(false);
-                      } else if (scrollY < heroHeight - 200) { 
-                        setIsVisible(false);
-                      } else {
-                        setIsVisible(true);
-                        setIsFixed(true);
-                      }
-                    }
-                  
-                  };
-                
-                  window.addEventListener("scroll", handleScroll);
-                  return () => window.removeEventListener("scroll", handleScroll);
-                }, []);
-
-                // Check if the current page is Home to conditionally apply transparency
-    const isHomePage = location.pathname === "/";
-                
-                        
-
+function Footer() {
     return(
         <>
-                        {/* LARGE SCREEN HEADER--ALL ELEMENTS ON THE HEADER FOR BIG SCREENS */}
-          <div ref={headerRef} className={`mainContainer mx-auto hidden  md:block md:fixed z-40 w-full transition-opacity duration-500
-                ${isVisible ? "opacity-100" : "opacity-0"} 
-                ${isFixed ? "bg-white shadow-lg" : (isHomePage ? "bg-transparent " : "bg-white shadow-lg")}
-              `} >
-                <div className="flex justify-between 2xl:justify-center 2xl:gap-[1200px] px-10 md:py-2 lg:py-3 2xl:py-6 items-center  bg-white"> {/*SOCIAL MEDIA ICONS AND DONATE BUTTON */}
+                        {/*LARGE SCREEN VIEW */}
+            <div className="mainFooterContainer hidden md:block relative bg-cover bg-center bg-no-repeat mx-auto pb-3"  style={{ backgroundImage: `url('/images/FooterImage.webp')` }}>
+                    <div className=" absolute inset-0 z-0 bg-[#1D7948CC]/80 h-full w-full"></div>
+                    <div className="subContianer relative z-10   ">
+                            {/*FIRST DIV */}
+                    
+                    <div className="flex justify-around items-center  py-3">
+                            <div className="text-white">
+                            <p className="font-Inter font-semibold">Subscribe to our newsletter to<br /> keep up with what’s new </p>
+                            </div>
+
+                            <div className="space-x-5">
+                                <input id='newsLetterSubEmail' type="email" placeholder="example@gmail.com" className="border border-white placeholder:text-white pb-1 pl-5 pr-14 placeholder:text-sm  rounded-2xl" />
+
+                                <button className="font-Inter font-semibold text-xs text-white bg-[#E5A615] px-3 py-1.5 rounded-3xl transition-transform duration-300 ease-in-out transform hover:scale-110">
+                           Subscribe
+                            </button>
+                            </div>
                         
-                         <div className='flex h-5 md:gap-1 '> 
+                    </div>
+
+                              {/*SECOND DIV */}
+                    <div className="bg-white grid">
+                        <p className="text-center text-xl text-[#1D7948] font-Roboto font-extrabold my-6">Africa Center for Climate and Sustainability <br /> Empowerment </p>
+                        
+                        <div className='flex justify-around items-center mb-3'>
+                            <div> {/*Logo Div */}
+                                    <img src={footerLogo} alt='ACCSE LOGO' className='h-[200px] w-[200px]' />
+                            </div>
+                            
+                            <div className='font-Lato space-y-3'> {/*Contact Details Div */}
+                                <p >Parakuo Estate, Oko Street <br /> Opposite Chrispod Hospital <br /> Dome</p>
+
+                                <p>+233 24 418 2515</p>
+
+                                <p>info@ccseghana.com</p>
+                            
+                            </div>
+
+                            <div className='space-y-10'>  {/* Policy and Social Icons Div */}
+
+                                <div className='font-Lato space-y-3'>
+
+                                    <p>Privacy Policy</p>
+
+                                    <p>Terms & Conditions</p>
+
+                                </div>
+
+                                <div className='flex h-5 md:gap-1 '> 
                                         {/*FACEBOOK ICON */}
                                         <a href="https://www.facebook.com/profile.php?id=61561604614015&mibextid=kFxxJD" target="_blank" rel="noopener noreferrer" >
                                         <svg className='h-6  md:h-7 2xl:h-10'  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="facebook">
@@ -163,241 +89,70 @@ function Header() {
                                         </a>
                         </div>
 
-                        <div>
-                            <button className="bg-[#1D7948] md:text-sm text-white font-Inter rounded-md px-2 py-1">Donate</button>
+                            </div>
+
                         </div>
-                            
+
+                        <div className='justify-self-center w-[90%] h-[1px]  bg-black mb-1'></div>
+
+                        <p className='text-center text-[15px] font-Lato my-2'>© 2025 CCSE Ghana • All Rights Reserved</p>
+
+                    </div>
+
                 </div>
-      <div className="Header flex items-center justify-center  md:gap-8 lg:gap-10 xl:gap-20 2xl:gap-52 mx-10 w-full">
-        {/* Logo */}
-        <div className="header-logo">
-          <img className="md:h-20 md:w-36 lg:h-28 " src={logo} alt="Logo" />
-        </div>
+            </div>
 
-        {/* Navigation */}
-        <nav className="bg-black/30 rounded-full md:px-6 lg:px-8 md:py-2 lg:py-3 xl:py-3 xl:px-10 md:mr-3 lg:mr-5 ">
-          <ul className="flex lg:gap-x-10 md:gap-x-5 font-Lato  font-bold lg:text-xl md:text-base text-white relative">
-            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/Projects" }, { name: "News", path: "/Projects" }, { name: "Documents", path: "/Projects" },].map((item) => (
-              <Link key={item.name} to={item.path}>
-                <li className={`relative group hover:text-[#EFA51E] ${location.pathname === item.path ? "" : ""}`}>
-                  {item.name}
-                  <span
-                    className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
-                        ${location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"}`}
-                  ></span>
-                </li>
-              </Link>
-            ))}
+                    {/*SMALL SCREEN VIEW */}
 
-            {/* Innovators Dropdown */}
-            <li
-              // ref={dropdownRef}
-              className="relative group cursor-pointer"
-              // onMouseEnter={() => setOpenDropdown(true)}
-              // onMouseLeave={() => {
-              //   setOpenDropdown(false);
-              //   setOpenSubDropdown(null);
-              // }}
-            >
-              <div 
-                  onMouseEnter={() => setOpenDropdown(true)}
-                  onMouseLeave={() => {
-                    setOpenDropdown(false);
-                    setOpenSubDropdown(null);
-                  }}
-                  className="inline-block"
-                  >
+            <div className="block md:hidden relative" style={{ backgroundImage: `url('/images/FooterImage.webp')` }}>
+  <div className="absolute inset-0 z-0 bg-[#1D7948CC]/80 h-full w-full"></div>
+  <div className="relative z-10 p-4 space-y-6">
 
-             {/* Trigger */}
-         <div className="relative z-10 font-Lato font-bold hover:text-[#EFA51E]">Regional Offices</div>
-
-            {/* Invisible bridge */}
-            <div className="absolute left-0 top-full h-6 w-full z-0"></div>
-              <span
-                className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
-                    ${location.pathname.startsWith("/innovators") ? "w-full" : "w-0 group-hover:w-full"}`}
-              ></span>
-              
-              {openDropdown && (
-                <div 
-                className={`absolute top-full z-20 ${isFixed ? 'mt-[26px]' : (isHomePage ? 'mt-2' : 'mt-[26px]')}`}
-                onMouseEnter={() => setOpenDropdown(true)} // keep open while over dropdown
-                onMouseLeave={() => {
-                  setOpenDropdown(false);
-                  setOpenSubDropdown(null);
-                }}
-                style={{ [isNearRightEdge ? "right" : "left"]: "0" }}
-              >
-                <ul className="absolute top-full bg-white text-sm shadow-lg border-[0.5px]  w-48"
-                    style={{ [isNearRightEdge ? "right" : "left"]: "0" }}>
-                  {Object.keys(cohorts).map((cohort) => (
-                    <li
-                      key={cohort}
-                      className="hover:bg-gray-100 px-4 py-2 cursor-pointer relative flex justify-between items-center"
-                      onMouseEnter={() => setOpenSubDropdown(cohort)}
-                    >
-                      {cohort}
-                      <FaChevronRight className="text-gray-500 w-3 h-3" />
-                      {openSubDropdown === cohort && (
-                        <ul className="absolute top-0 bg-white text-sm shadow-lg border-[0.5px] rounded-sm w-48"
-                            style={{ [isNearRightEdge ? "right" : "left"]: "100%" }}>
-                          {cohorts[cohort].map((group) => (
-                            <Link
-                              key={group}
-                              to={`/innovators/${cohort.replace(/\s+/g, "-").toLowerCase()}/${group.replace(/\s+/g, "-").toLowerCase()}`}
-                            >
-                              <li className="hover:bg-gray-100 hover:text-[#2075B6] px-4 py-2 flex justify-between items-center">
-                                {group}
-                                {/* <FaChevronRight className="text-gray-500" /> */}
-                              </li>
-                            </Link>
-                          ))}
-                        </ul>
-                      )}
-                    </li>
-                  ))}
-                </ul>
-                </div>
-              )}
-              </div>
-            </li>
-          </ul>
-        </nav>
-
-        {/* Contact Us Button */}
-        <div className="header-button mr-20">
-          <button className="font-Inter font-bold md:text-[10px]  text-white border border-white px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110">
-            <Link to="/Contact">Contact Us</Link>
-          </button>
-        </div>
+    {/* Newsletter Section */}
+    <div className="text-center text-white space-y-3">
+      <p className="font-Inter font-semibold text-base">
+        Subscribe to our newsletter to<br /> keep up with what’s new
+      </p>
+      <div className="space-y-2">
+        <input
+          id="newsLetterSubEmail"
+          type="email"
+          placeholder="example@gmail.com"
+          className="w-full border border-white placeholder:text-white py-2 px-4 text-sm rounded-2xl bg-transparent"
+        />
+        <button className="w-full font-Inter font-semibold text-xs text-white bg-[#E5A615] py-2 rounded-3xl transition-transform duration-300 ease-in-out transform hover:scale-105">
+          Subscribe
+        </button>
       </div>
     </div>
 
-                                            {/*SMALL SCREEN HEADER */}
+    {/* Organization Title */}
+    <div className="text-center bg-white text-black ">
+      <p className="text-lg font-Roboto font-extrabold text-[#1D7948]  py-2 rounded">
+        Africa Center for Climate and Sustainability Empowerment
+      </p>
 
-            <div ref={headerRef} className={`main w-full mx-auto block md:hidden fixed z-40 transition-opacity duration-500  
-                 ${isVisible ? "opacity-100" : "opacity-0"} 
-                 ${isFixed ? "bg-white shadow-lg" : (isHomePage ? "bg-transparent" : "bg-white shadow-lg")}`}>
-  <div className="headerSmallScreen flex justify-between items-center mx-auto max-w-[90%]"> 
-    <div className='logoSmallScreens flex justify-between  items-center '>
-      <img className="h-20" src={logo} alt="YCLIP'S Logo" />
+         {/* Info Section */}
+    <div className="flex flex-col items-center text-center  font-Lato space-y-5">
+      
+      {/* Logo */}
+      <img src={footerLogo} alt="ACCSE Logo" className="h-[150px] w-[150px]" />
 
-      <div className='header-title'>
-        <p className="font-bold font-lato text-[#116d3c] text-3xl">ACCSE</p>
-      </div> 
-    </div>
+      {/* Contact Info */}
+      <div className="text-sm space-y-5">
+        <p>Parakuo Estate, Oko Street<br /> Opposite Chrispod Hospital<br /> Dome</p>
+        <p>+233 24 418 2515</p>
+        <p>info@ccseghana.com</p>
+      </div>
 
+      {/* Policy Links */}
+      <div className="text-sm space-y-2">
+        <p>Privacy Policy</p>
+        <p>Terms & Conditions</p>
+      </div>
 
-
-    <div className='flex items-center gap-x-6'>
-      {/* <div className='header-button'>
-        <button className='font-ISsans text-[10px] text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110'>
-          <Link to="/Contact">Contact Us</Link>
-        </button>
-      </div> */}
-
-       
-
-      <div className="md:hidden bg-black/30 p-2 rounded-md">
-        <button onClick={toggleNavbar} className="font-normal text-white relative">
-          <HiMenu size={24} />
-        </button>
-        {/*LOGIC TO CONTROL THE SIDEBAR */}
-          {isOpen && (
-      <div
-        className="fixed top-0 left-0 w-full h-full bg-black/50 z-30"
-        onClick={toggleNavbar} // clicking outside closes sidebar
-      ></div>
-      )}
-
-        {isOpen && (
-          
-          <div className={`fixed flex flex-col  bg-white   top-0 right-0 h-full w-[80%]  transform ${isOpen ? "translate-x-0" : "translate-x-full"} transition-transform duration-300 z-40`} >
-
-          <div className="flex justify-between items-center px-3 py-6">
-          <button onClick={toggleNavbar}   className="absolute top-10 right-4 z-10 text-black">
-            <HiX size={24} />
-          </button>
-
-          <div className='logoSmallScreens flex justify-between  items-center '>
-          <img className="h-16" src={logo} alt="YCLIP'S Logo" />
-
-            <div className='header-title'>
-              <p className="font-bold font-lato text-[#0a4124] text-xl">ACCSE</p>
-            </div> 
-          </div>
-
-          </div>
-
-          <div className="w-full h-[0.5px] bg-black"></div> {/*THIN LINE  */}
-
-            {/*NAVIGATION LINKS FOR THE SIDE BAR */}
-            <div className="relative flex justify-start basis-1/2">
-              <div onClick={toggleNavbar} className="Nav-Links flex flex-col justify-around items-start ml-8 text-xl font-funnelDisplay font-semibold animate-fadeIn text-white z-50">
-                <Link to="/" className={`font-semibold ${location.pathname === "/" ? "text-[#218adb]" : "text-black hover:text-blue-300"}`}>
-                  <p>Home</p>
-                </Link>
-                <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
-                  <p>About</p>
-                </Link>
-                <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
-                  <p>Projects</p>
-                </Link>
-                <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
-                  <p>News</p>
-                </Link>
-
-                {/* Innovators Dropdown */}
-                <div className="relative w-full">
-                  <button onClick={(e) => { e.stopPropagation(); setShowCohorts(!showCohorts); }} className="w-full text-black hover:text-gray-400 flex justify-between items-center">
-                    <p className="font-semibold">Documents</p>
-                    <span className="ml-4">{showCohorts ? "▲" : "▼"}</span>
-                  </button>
-                  {showCohorts && (
-                    <div className="ml-4 mt-2">
-                      {Object.keys(cohorts).map((cohort) => (
-                        <div key={cohort} className="mb-3">
-                          {/* Cohort Button */}
-                          <button onClick={(e) => { e.stopPropagation(); setActiveCohort(activeCohort === cohort ? null : cohort); }} className="w-full text-left text-white hover:text-gray-400 flex justify-between items-center px-4 py-2 rounded-md bg-gray-700">
-                            <p className="font-medium">{cohort}</p>
-                            <span className="ml-3">{activeCohort === cohort ? "▲" : "▼"}</span>
-                          </button>
-                          {/* Groups within the cohort */}
-                          {activeCohort === cohort && (
-                            <div className="ml-6 mt-1 space-y-10x bg-gray-600 text-sm rounded-lg p-2">
-                              {cohorts[cohort].map((group) => (
-                                 <Link
-                                 key={group}
-                                 to={`/innovators/${cohort.replace(/\s+/g, "-").toLowerCase()}/${group.replace(/\s+/g, "-").toLowerCase()}`}
-                                 className="block text-white text-sm hover:text-gray-400 py-2"
-                               >
-                                {group}
-                              </Link>
-                              ))}
-                            </div>
-                          )}
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-
-                <Link to="/Projects" className={`${location.pathname === "/Projects" ? "text-[#218adb]" : "text-black hover:text-gray-400"}`}>
-                  <p>Regional Offices</p>
-                </Link>
-              </div>
-            </div>
-
-                      <div className="w-full h-[0.5px] bg-black mt-7  "></div> {/*THIN LINE  */}
-
-
-            {/* Social Media Icons */}
-            <div onClick={toggleNavbar} className="social-media-icons basis-1/4 flex flex-col items-start ml-5 gap-3 p-6 justify-center animate-slideInBottom z-40">
-
-                                    <div className="mb-3">
-                                      <p className="font-PlayFair text-2xl">Follow Us</p>
-                                    </div>
-                                    <div className='flex h-8 gap-3 '> 
+      {/* Social Media Icons */}
+      <div className='flex h-8 gap-3 mb-2 '> 
                                         {/*FACEBOOK ICON */}
                                         <a href="https://www.facebook.com/profile.php?id=61561604614015&mibextid=kFxxJD" target="_blank" rel="noopener noreferrer" >
                                         <svg className='h-8 '  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" id="facebook">
@@ -430,38 +185,23 @@ function Header() {
                                         <path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path><path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
                                         </svg>
                                         </a>
-                                    </div>
-                        
-                       </div>
+    </div>
 
-                    <div className="flex justify-center gap-20 mb-5">
-                             <button className="bg-[#1D7948] text-sm text-white font-Inter rounded-md px-2 py-1 ">Donate</button>
-                             
-                            <button className='font-ISsans text-[10px] text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110'>
-                              Contact Us
-                            </button>
-      
+     <div className='justify-self-center w-[90%] h-[1px]  bg-black mb-1'></div>
 
-                        </div>
-                    </div>
-                      
-                          )}        
+    <p className='text-center text-[10px] font-Lato my-2'>© 2025 CCSE Ghana • All Rights Reserved</p>
+
+    </div>
 
 
-                    </div>  
-                </div>
-                
+    </div>
 
-
-                
-
+   
   </div>
 </div>
-
-
 
         </>
     )
 }
 
-export default Header;
+export default Footer;
