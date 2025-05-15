@@ -6,7 +6,7 @@ function HomePageAboutSection () {
     return(
         <>
                 {/*LARGE SCREENS */}
-            <div className="mainContainer hidden md:block mt-20 px-4 md:px-0">
+            <div className="mainContainer hidden md:block mt-20 lg:px-4 md:mx-3 md:px-0 md:mx">
   <div className="subContainer flex flex-col md:flex-row items-center justify-center md:gap-32 h-auto md:h-[600px]">
     
     {/* IMAGE SECTION */}
@@ -31,7 +31,7 @@ function HomePageAboutSection () {
       <div className="space-y-5 text-center md:text-left">
         <p className="text-[#EFA51E] lg:text-2xl md:text-xl font-Inter font-bold">About Us</p>
         <p className="text-[#1D7948] lg:text-xl md:text-lg font-Roboto font-medium">
-          Africa Center for Climate and <br />
+          Africa Center for Climate and <br className="lg:block md:hidden"  />
           Sustainability Empowerment (ACCSE)
         </p>
         <p className="font-Inter font-medium lg:text-lg md:text-base">
