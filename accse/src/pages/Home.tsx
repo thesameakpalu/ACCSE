@@ -4,6 +4,7 @@ import HomePageAboutSection from "../components/Home/HomePageAboutSection";
 import OurImpacts from "../components/Home/ourImpactsSection";
 import LandingpageBanner from "../components/Home/LandingPageBanner";
 import ImpactInAction from "../components/Home/impactInActionSection";
+import WhatSetsUs from "../components/Home/WhatSetsUsSection";
 
 function Home() {
   
@@ -17,6 +18,7 @@ function Home() {
           <LandingpageBanner />
           <HomePageAboutSection />
           <OurImpacts />
+          <WhatSetsUs />
           <ImpactInAction />
           
         </div>
