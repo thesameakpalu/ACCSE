@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Playball&display=swap');
@@ -17,6 +18,7 @@
     --font-playball: "Playball", serif;
     --font-Inter: "Inter", sans-serif;
      --font-Roboto: "Roboto", sans-serif;
+     --font-RobotoSerif: "Roboto Serif", serif;
      --breakpoint-ms: 23.4rem;
 
   }

@@ -139,7 +139,7 @@ function OurImpacts() {
                     <img src={tornImage} alt='Torn Image MockUp' className='w-full h-[60px] object-cover pointer-events-none' />
 
                     <p className='font-Inter text-xl italic text-[#EFA51E] font-bold text-center mt-20'>Our Impacts</p>
-                    <p className='text-center font-Roboto font-medium text-xl mt-5'>Change is possible when communities lead. These are the milestones we've <br className='md:hidden lg:block'  /> reached together:</p>
+                    <p className='text-center font-Roboto font-medium text-xl mt-5'>Change is possible when communities lead. These are the milestones we've <br className='md:hidden lg:block'   /> reached together:</p>
 
                     <div  className=' flex flex-col gap-20 bg-white pt-10 '> {/*SVGS */}
                         <div className="flex flex-col justify-center gap-10 mx-10 "> {/*FIRST 3 SVG'S */}
