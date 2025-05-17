@@ -75,13 +75,8 @@ function LastSection() {
       </div>
 
                   {/*SMALL SCREENS  */}
-      <div ref={ref} className="mainContainer md:hidden my-50 flex flex-col items-center">
-         <motion.div
-          variants={fadeInUp}
-          initial="hidden"
-          animate={inView ? 'visible' : 'hidden'}
-          className="w-full flex flex-col items-center gap-6"
-        >
+      <div  className="mainContainer md:hidden my-50 flex flex-col items-center">
+        
   <div className="subContainer w-[90%] flex flex-col items-center gap-20">
     {/* TEXT SECTION */}
     <div className="flex flex-col items-center text-center gap-6 w-full">
@@ -119,7 +114,6 @@ function LastSection() {
       />
     </div>
   </div>
-  </motion.div>
 </div>
 
     </>

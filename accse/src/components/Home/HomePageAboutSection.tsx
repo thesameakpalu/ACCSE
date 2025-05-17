@@ -83,13 +83,8 @@ function HomePageAboutSection () {
             </div>
 
             {/*SMALL SCREENS */}
-            <div ref={ref} className="mainContainer block md:hidden my-30 px-4">
-              <motion.div
-                        variants={fadeInUp}
-                        initial="hidden"
-                        animate={inView ? 'visible' : 'hidden'}
-                        className="w-full flex flex-col items-center gap-6"
-                      >
+            <div  className="mainContainer block md:hidden my-30 px-4">
+              
   <div className="subContainer flex flex-col items-center justify-center gap-10">
 
     {/* IMAGE SECTION */}
@@ -129,7 +124,6 @@ function HomePageAboutSection () {
     </div>
 
   </div>
-  </motion.div>
 </div>
 
 

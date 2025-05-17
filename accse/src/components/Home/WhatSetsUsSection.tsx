@@ -130,13 +130,8 @@ function WhatSetsUs() {
 
                         {/*SMALL SCREENS */}
 
-            <div ref={ref} className="mainContainer flex justify-center my-50 md:hidden"> {/* HIDE ON MEDIUM AND UP */}
-              <motion.div
-                        variants={fadeInUp}
-                        initial="hidden"
-                        animate={inView ? 'visible' : 'hidden'}
-                        className="w-full flex flex-col items-center gap-6"
-                      >
+            <div  className="mainContainer flex justify-center my-50 md:hidden"> {/* HIDE ON MEDIUM AND UP */}
+              
   <div className="subContainer w-[90%] flex flex-col">
 
     {/* TOP: IMAGE CONTAINER */}
@@ -194,7 +189,6 @@ function WhatSetsUs() {
       </div>
     </div>
   </div>
-  </motion.div>
 </div>
 
         </>
