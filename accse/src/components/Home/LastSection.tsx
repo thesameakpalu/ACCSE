@@ -1,11 +1,36 @@
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import img1 from '/src/assets/images/lastSectionMask2.webp'
 import img2 from '/src/assets/images/lastSectionMask1.webp'
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut',
+    },
+  },
+};
+
 function LastSection() {
+
+    const { ref, inView } = useInView({
+    triggerOnce: true,  // Only trigger animation once
+    threshold: 0.5,      // Trigger when 40% of the section is visible
+  });
   return (
     <>
                 {/*LARGE SCREENS */}
-      <div className="mainContainer hidden my-20 md:flex justify-center">
+      <div ref={ref} className="mainContainer hidden mb-50 mt-60 md:flex justify-center">
+        <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          className="w-full flex flex-col items-center gap-6"
+        >
         <div className="subContainer w-[90%] flex items-center justify-center gap-10">
           {/* LEFT TEXT SECTION */}
          <div className="w-1/2 flex flex-col justify-center items-center text-center gap-16">
@@ -46,11 +71,18 @@ function LastSection() {
             />
           </div>
         </div>
+        </motion.div>
       </div>
 
                   {/*SMALL SCREENS  */}
-      <div className="mainContainer md:hidden my-10 flex flex-col items-center">
-  <div className="subContainer w-[90%] flex flex-col items-center gap-8">
+      <div ref={ref} className="mainContainer md:hidden my-50 flex flex-col items-center">
+         <motion.div
+          variants={fadeInUp}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          className="w-full flex flex-col items-center gap-6"
+        >
+  <div className="subContainer w-[90%] flex flex-col items-center gap-20">
     {/* TEXT SECTION */}
     <div className="flex flex-col items-center text-center gap-6 w-full">
       <div className="space-y-4 w-full">
@@ -87,6 +119,7 @@ function LastSection() {
       />
     </div>
   </div>
+  </motion.div>
 </div>
 
     </>

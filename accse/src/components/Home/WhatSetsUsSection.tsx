@@ -1,3 +1,5 @@
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import { useState } from 'react';
 import takeNoteSticker from '/src/assets/images/takeNoteSticker.webp'
 import groupImg from '/src/assets/images/WhatSetsUsgroupImage.webp'
@@ -7,8 +9,25 @@ import svg3 from '/src/assets/svgs/WhatSetsUs-3.svg';
 import svg4 from '/src/assets/svgs/WhatSetsUs-4.svg';
 import dropDownArrow from '/src/assets/svgs/dropDownArrow.svg';
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.0,
+      ease: 'easeOut',
+    },
+  },
+};
+
 
 function WhatSetsUs() {
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,  // Only trigger animation once
+    threshold: 0.4,      // Trigger when 40% of the section is visible
+  });
 
                 const [openIndex, setOpenIndex] = useState<number | null>(null);
 
@@ -42,7 +61,13 @@ function WhatSetsUs() {
     return(
         <>
                         {/*LARGE SCREENS */}
-           <div className="mainContainer hidden md:flex justify-center my-20">
+           <div ref={ref} className="mainContainer hidden md:flex justify-center my-80">
+            <motion.div
+                        variants={fadeInUp}
+                        initial="hidden"
+                        animate={inView ? 'visible' : 'hidden'}
+                        className="w-full flex flex-col items-center gap-6"
+                      >
                 <div className="subContainer w-[90%] flex h-[600px]">
                             {/*LEFT ITEMS CONTAINER */}
                     <div className="relative flex flex-col w-1/2 md:px-5 px-10 pb-10 md:overflow-y-auto lg:overflow-y-hidden " style={{ backgroundImage: `url('/images/AboutSmallImage.webp')` }}> 
@@ -99,13 +124,19 @@ function WhatSetsUs() {
                     </div>
 
                 </div>
-            
+            </motion.div>
             </div>
 
 
                         {/*SMALL SCREENS */}
 
-            <div className="mainContainer flex justify-center my-10 md:hidden"> {/* HIDE ON MEDIUM AND UP */}
+            <div ref={ref} className="mainContainer flex justify-center my-50 md:hidden"> {/* HIDE ON MEDIUM AND UP */}
+              <motion.div
+                        variants={fadeInUp}
+                        initial="hidden"
+                        animate={inView ? 'visible' : 'hidden'}
+                        className="w-full flex flex-col items-center gap-6"
+                      >
   <div className="subContainer w-[90%] flex flex-col">
 
     {/* TOP: IMAGE CONTAINER */}
@@ -163,6 +194,7 @@ function WhatSetsUs() {
       </div>
     </div>
   </div>
+  </motion.div>
 </div>
 
         </>

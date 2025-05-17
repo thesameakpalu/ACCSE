@@ -1,12 +1,40 @@
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import smallImage from '/src/assets/images/AboutSmallImage.webp';
 import largeImage from '/src/assets/images/AboutLargeImage.webp';
 
+const fadeInUp = {
+  hidden: { opacity: 0, y: 40 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 0.8,
+      ease: 'easeOut',
+    },
+  },
+};
+
 
 function HomePageAboutSection () {
+
+  const { ref, inView } = useInView({
+    triggerOnce: true,  // Only trigger animation once
+    threshold: 0.4,      // Trigger when 40% of the section is visible
+  });
+
+  
+
     return(
         <>
                 {/*LARGE SCREENS */}
-            <div className="mainContainer hidden md:block mt-20 lg:px-4 md:mx-3 md:px-0 md:mx">
+            <div ref={ref} className="mainContainer hidden md:block mt-20 lg:px-4 md:mx-3 md:px-0 md:mx">
+              <motion.div
+                        variants={fadeInUp}
+                        initial="hidden"
+                        animate={inView ? 'visible' : 'hidden'}
+                        className="w-full flex flex-col items-center gap-6"
+                      >
   <div className="subContainer flex flex-col md:flex-row items-center justify-center md:gap-32 h-auto md:h-[600px]">
     
     {/* IMAGE SECTION */}
@@ -51,10 +79,17 @@ function HomePageAboutSection () {
       </div>
     </div>
   </div>
+      </motion.div>
             </div>
 
             {/*SMALL SCREENS */}
-            <div className="mainContainer block md:hidden my-40 px-4">
+            <div ref={ref} className="mainContainer block md:hidden my-30 px-4">
+              <motion.div
+                        variants={fadeInUp}
+                        initial="hidden"
+                        animate={inView ? 'visible' : 'hidden'}
+                        className="w-full flex flex-col items-center gap-6"
+                      >
   <div className="subContainer flex flex-col items-center justify-center gap-10">
 
     {/* IMAGE SECTION */}
@@ -94,6 +129,7 @@ function HomePageAboutSection () {
     </div>
 
   </div>
+  </motion.div>
 </div>
 
 

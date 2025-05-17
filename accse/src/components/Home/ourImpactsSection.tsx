@@ -1,3 +1,5 @@
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import tornImage from '/src/assets/images/tornPage-mockup.webp';
 import svg1 from '/src/assets/svgs/homeImpactSection-1.svg';
 import svg2 from '/src/assets/svgs/homeImpactSection-2.svg';
@@ -6,12 +8,44 @@ import svg4 from '/src/assets/svgs/homeImpactSection-4.svg';
 import svg5 from '/src/assets/svgs/homeImpactSection-5.svg';
 
 
+
+const fancyEntrance = {
+  hidden: { x: -100, scale: 0.9, opacity: 0 },
+  visible: {
+    x: 0,
+    scale: 1,
+    opacity: 1,
+    transition: {
+      duration: 0.8,
+      when: "beforeChildren",       // Ensure parent animates first
+      staggerChildren: 0.8,         // Delay between child animations
+    },
+  },
+};
+
+const itemVariants = {
+  hidden: { opacity: 0, y: 20 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
+};
+
+
 function OurImpacts() {
+    const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.3, // trigger when 30% is visible
+  });
     return(
         <>
                     {/*LARGE SCREENS */}
-            <div className="mainContainer hidden md:block  my-20">
+            <div ref={ref} className="mainContainer hidden md:block  my-20">
+                        
                 <div className="subContainer flex justify-center flex-col items-center">
+                    <motion.div
+          variants={fancyEntrance}
+          initial="hidden"
+          animate={inView ? 'visible' : 'hidden'}
+          className="w-full flex flex-col items-center gap-6"
+        >
                     <img src={tornImage} alt='Torn Image MockUp' className='w-full h-[60px] object-cover pointer-events-none' />
 
                     <p className='font-Inter text-xl italic text-[#EFA51E] font-bold text-center mt-20'>Our Impacts</p>
@@ -20,7 +54,9 @@ function OurImpacts() {
                     <div  className=' flex flex-col gap-20 bg-white pt-10 '> {/*SVGS */}
                         <div className="flex justify-center gap-10 mx-10 "> {/*FIRST 3 SVG'S */}
                                             {/*SVG 1 */}
-                            <div className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
+                            <motion.div
+                                     variants={itemVariants}
+                             className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
                             <img src={svg1} alt='SVG 1' className='w-[60px] h-[60px]' />
                             <div>
                                 <p className='font-Roboto text-lg font-medium'>Action For Climate Empowerment</p>
@@ -38,9 +74,11 @@ function OurImpacts() {
                                     </button>
                                     
                             </div>
-                            </div>
+                            </motion.div>
                                             {/*SVG 2 */}
-                            <div className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
+                            <motion.div
+                                     variants={itemVariants}
+                             className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
                             <img src={svg2} alt='SVG 1' className='w-[60px] h-[60px]' />
                             <div>
                                 <p className='font-Roboto text-lg font-medium'>Biodiversity Conservation</p>
@@ -58,9 +96,11 @@ function OurImpacts() {
                                     </button>
                                     
                             </div>
-                            </div>
+                            </motion.div>
                                             {/*SVG 3 */}
-                            <div className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
+                            <motion.div
+                                     variants={itemVariants}
+                             className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
                             <img src={svg3} alt='SVG 1' className='w-[60px] h-[60px]' />
                             <div>
                                 <p className='font-Roboto text-lg font-medium'>Climate Resilient Agriculture</p>
@@ -78,14 +118,16 @@ function OurImpacts() {
                                     </button>
                                     
                             </div>
-                            </div>
+                            </motion.div>
                         </div>
 
 
                         <div className="flex justify-center gap-10 mx-10 "> {/*SECOND  2 SVG'S */}
                                                                         
                                             {/*SVG 4 */}
-                            <div className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
+                            <motion.div
+                                     variants={itemVariants}
+                             className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
                             <img src={svg4} alt='SVG 1' className='w-[60px] h-[60px]' />
                             <div>
                                 <p className='font-Roboto text-lg font-medium'>Forest Restoration</p>
@@ -103,9 +145,11 @@ function OurImpacts() {
                                     </button>
                                     
                             </div>
-                            </div>
+                            </motion.div>
                                             {/*SVG 5 */}
-                            <div className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
+                            <motion.div
+                                     variants={itemVariants}
+                            className='flex flex-col  justify-center bg-white shadow-[0_0px_20px_rgba(0,0,0,0.2)] px-5 py-10 space-y-5 rounded-xl'>
                             <img src={svg5} alt='SVG 1' className='w-[60px] h-[60px]' />
                             <div>
                                 <p className='font-Roboto text-lg font-medium'>Waste Management</p>
@@ -123,19 +167,24 @@ function OurImpacts() {
                                     </button>
                                     
                             </div>
-                            </div>
+                            </motion.div>
                         </div>
 
                         
 
                     </div>
+                    </motion.div>
                 </div>
                 
             </div>
 
                     {/*SMALL SCREENS */}
             <div className="mainContainer block md:hidden  my-20">
+
                 <div className="subContainer flex justify-center flex-col items-center">
+
+                    
+                    
                     <img src={tornImage} alt='Torn Image MockUp' className='w-full h-[60px] object-cover pointer-events-none' />
 
                     <p className='font-Inter text-xl italic text-[#EFA51E] font-bold text-center mt-20'>Our Impacts</p>

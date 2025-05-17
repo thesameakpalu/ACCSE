@@ -1,6 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect, useRef } from "react";
-import { FaChevronRight } from "react-icons/fa";
+// import { FaChevronRight } from "react-icons/fa";
 import { HiMenu, HiX } from 'react-icons/hi';
 import logo from '/src/assets/images/logo.webp';
 
@@ -15,8 +15,8 @@ function Header() {
               setIsOpen(!isOpen);
             };
 
-            const [showCohorts, setShowCohorts] = useState(false);
-    const [activeCohort, setActiveCohort] = useState<string | null>(null);
+    //         const [showCohorts, setShowCohorts] = useState(false);
+    // const [activeCohort, setActiveCohort] = useState<string | null>(null);
 
 
            
@@ -25,23 +25,23 @@ function Header() {
 
             
 
-            const cohorts: Record<string, string[]> = {
-                "Cohort 1": ["Climate Smart Agriculture", "Good Health & Well Being", "Zero Emission Transportation", "Circular Economy", "Biodiversity Conservation", "Water & Sanitation"],
+            // const cohorts: Record<string, string[]> = {
+            //     "Cohort 1": ["Climate Smart Agriculture", "Good Health & Well Being", "Zero Emission Transportation", "Circular Economy", "Biodiversity Conservation", "Water & Sanitation"],
                 // "Cohort 2": ["Group 1", "Group 2", "Group 3", "Group 4", "Group 5", "Group 6"],
                 // "Cohort 3": ["Group 1", "Group 2", "Group 3", "Group 4", "Group 5", "Group 6"],
-              };
+              //};
             
-                            const [openDropdown, setOpenDropdown] = useState(false);
-                const [openSubDropdown, setOpenSubDropdown] = useState<string | null>(null);
-                const dropdownRef = useRef<HTMLLIElement>(null);
-                const [isNearRightEdge, setIsNearRightEdge] = useState(false);
+                //             const [openDropdown, setOpenDropdown] = useState(false);
+                // const [openSubDropdown, setOpenSubDropdown] = useState<string | null>(null);
+                // const dropdownRef = useRef<HTMLLIElement>(null);
+                // const [isNearRightEdge, setIsNearRightEdge] = useState(false);
 
-                useEffect(() => {
-                    if (dropdownRef.current) {
-                    const rect = dropdownRef.current.getBoundingClientRect();
-                    setIsNearRightEdge(window.innerWidth - rect.right < 200);
-                    }
-                }, [openDropdown]);       
+                // useEffect(() => {
+                //     if (dropdownRef.current) {
+                //     const rect = dropdownRef.current.getBoundingClientRect();
+                //     setIsNearRightEdge(window.innerWidth - rect.right < 200);
+                //     }
+                // }, [openDropdown]);       
 
                 
                 // const [isNavbarOpen, setIsNavbarOpen] = useState(false);
@@ -126,7 +126,7 @@ function Header() {
                 ${isVisible ? "opacity-100" : "opacity-0"} 
                 ${isFixed ? "bg-white shadow-lg" : (isHomePage ? "bg-transparent " : "bg-white shadow-lg")}
               `} >
-                <div className="flex justify-between 2xl:justify-center 2xl:gap-[1200px] px-10 md:py-2 lg:py-3 2xl:py-6 items-center  bg-white"> {/*SOCIAL MEDIA ICONS AND DONATE BUTTON */}
+                <div className="flex justify-between 2xl:justify-center 2xl:gap-[1200px] px-10 md:py-2 lg:py-3 2xl:py-6 items-center  bg-white shadow-[0_0px_5px_rgba(0,0,0,0.2)]"> {/*SOCIAL MEDIA ICONS AND DONATE BUTTON */}
                         
                          <div className='flex h-5 md:gap-1 '> 
                                         {/*FACEBOOK ICON */}
@@ -168,16 +168,20 @@ function Header() {
                         </div>
                             
                 </div>
-      <div className="Header flex items-center justify-center  md:gap-8 lg:gap-10 xl:gap-20 2xl:gap-52 mx-10 w-full">
+      <div className="Header flex items-center justify-center   md:gap-8 lg:gap-10 xl:gap-20 2xl:gap-52 mx-10 w-full">
         {/* Logo */}
         <div className="header-logo">
           <img className="md:h-20 md:w-36 lg:h-28 " src={logo} alt="Logo" />
         </div>
 
         {/* Navigation */}
-        <nav className="bg-black/30 rounded-full md:px-6 lg:px-8 md:py-2 lg:py-3 xl:py-3 xl:px-10 md:mr-3 lg:mr-5 ">
-          <ul className="flex lg:gap-x-10 md:gap-x-5 font-Lato  font-bold lg:text-xl md:text-base text-white relative">
-            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/Projects" }, { name: "News", path: "/Projects" }, { name: "Documents", path: "/Projects" },].map((item) => (
+        <nav className={` rounded-full md:px-6 lg:px-8 md:py-2 lg:py-3 xl:py-3 xl:px-10 md:mr-3 lg:mr-5  
+            ${isFixed ? "bg-white" : (isHomePage ? "bg-black/30 " : "bg-white ")}
+          `}>
+          <ul className={`flex lg:gap-x-10 md:gap-x-5 font-Lato  font-bold lg:text-xl md:text-base  relative 
+              ${isFixed ? "text-black" : (isHomePage ? "text-white " : "text-black ")}
+            `}>
+            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/Projects" }, { name: "News", path: "/Projects" }, { name: "Documents", path: "/Projects" }, { name: "Regional Offices", path: "/Projects" } ].map((item) => (
               <Link key={item.name} to={item.path}>
                 <li className={`relative group hover:text-[#EFA51E] ${location.pathname === item.path ? "" : ""}`}>
                   {item.name}
@@ -190,7 +194,7 @@ function Header() {
             ))}
 
             {/* Innovators Dropdown */}
-            <li
+            {/* <li
               // ref={dropdownRef}
               className="relative group cursor-pointer"
               // onMouseEnter={() => setOpenDropdown(true)}
@@ -208,10 +212,10 @@ function Header() {
                   className="inline-block"
                   >
 
-             {/* Trigger */}
+             {/* Trigger 
          <div className="relative z-10 font-Lato font-bold hover:text-[#EFA51E]">Regional Offices</div>
 
-            {/* Invisible bridge */}
+            {/* Invisible bridge 
             <div className="absolute left-0 top-full h-6 w-full z-0"></div>
               <span
                 className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
@@ -248,19 +252,19 @@ function Header() {
                             >
                               <li className="hover:bg-gray-100 hover:text-[#2075B6] px-4 py-2 flex justify-between items-center">
                                 {group}
-                                {/* <FaChevronRight className="text-gray-500" /> */}
-                              </li>
+                                {/* <FaChevronRight className="text-gray-500" /> 
+                              </li> 
                             </Link>
                           ))}
                         </ul>
                       )}
-                    </li>
+                    </li> 
                   ))}
                 </ul>
                 </div>
               )}
               </div>
-            </li>
+            </li> */}
           </ul>
         </nav>
 
@@ -346,9 +350,12 @@ function Header() {
                 <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>News</p>
                 </Link>
+                <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
+                  <p>Documents</p>
+                </Link>
 
                 {/* Innovators Dropdown */}
-                <div className="relative w-full">
+                {/* <div className="relative w-full">
                   <button onClick={(e) => { e.stopPropagation(); setShowCohorts(!showCohorts); }} className="w-full text-black hover:text-gray-400 flex justify-between items-center">
                     <p className="font-semibold">Documents</p>
                     <span className="ml-4">{showCohorts ? "▲" : "▼"}</span>
@@ -357,12 +364,12 @@ function Header() {
                     <div className="ml-4 mt-2">
                       {Object.keys(cohorts).map((cohort) => (
                         <div key={cohort} className="mb-3">
-                          {/* Cohort Button */}
+                          {/* Cohort Button 
                           <button onClick={(e) => { e.stopPropagation(); setActiveCohort(activeCohort === cohort ? null : cohort); }} className="w-full text-left text-white hover:text-gray-400 flex justify-between items-center px-4 py-2 rounded-md bg-gray-700">
                             <p className="font-medium">{cohort}</p>
                             <span className="ml-3">{activeCohort === cohort ? "▲" : "▼"}</span>
                           </button>
-                          {/* Groups within the cohort */}
+                          {/* Groups within the cohort 
                           {activeCohort === cohort && (
                             <div className="ml-6 mt-1 space-y-10x bg-gray-600 text-sm rounded-lg p-2">
                               {cohorts[cohort].map((group) => (
@@ -380,7 +387,7 @@ function Header() {
                       ))}
                     </div>
                   )}
-                </div>
+                </div> */}
 
                 <Link to="/Projects" className={`${location.pathname === "/Projects" ? "text-[#218adb]" : "text-black hover:text-gray-400"}`}>
                   <p>Regional Offices</p>
