@@ -5,6 +5,7 @@ import OurImpacts from "../components/Home/ourImpactsSection";
 import LandingpageBanner from "../components/Home/LandingPageBanner";
 import ImpactInAction from "../components/Home/impactInActionSection";
 import WhatSetsUs from "../components/Home/WhatSetsUsSection";
+import LastSection from "../components/Home/LastSection";
 
 function Home() {
   
@@ -20,7 +21,7 @@ function Home() {
           <OurImpacts />
           <WhatSetsUs />
           <ImpactInAction />
-          
+          <LastSection />
         </div>
 
       <Footer />
