@@ -20,7 +20,7 @@ function AboutSection () {
                             </p>
                         </div>
 
-                        <div className="flex items-center justify-center mt-5">
+                        <div className="flex items-center justify-center mt-5 2xl:mt-10 2xl:gap-72">
                             <img src={img} alt='Some of Our Climate Leaders' className='w-1/2'></img>
                             
                             <div className='w-1/2  lg:space-y-20 md:space-y-10 lg:p-10 md:p-5  xl:text-lg lg:text-lg md:text-base 2xl:text-2xl'>
