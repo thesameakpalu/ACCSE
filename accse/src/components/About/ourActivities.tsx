@@ -1,15 +1,44 @@
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import img1 from '/src/assets/images/aboutActivities-1.webp'
 import img2 from '/src/assets/images/aboutActivities-2.webp'
 import img3 from '/src/assets/images/aboutActivities-3.webp'
 import img4 from '/src/assets/images/aboutActivities-4.webp'
 
 
+const zoomIn = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1.0,
+      ease: 'easeOut',
+    },
+  },
+};
+
+
+
+
 function OurActivities() {
+
+const { ref, inView } = useInView({
+    triggerOnce: true,  // Only trigger animation once
+    threshold: 0.2,      // Trigger when 40% of the section is visible
+  });
+
     return(
         <>
                 {/*LARGE CONTAINERS */}
-            <div className="mainContainer hidden md:flex justify-center my-40 bg-[#091F48CC]/90">
-                <div className="subContainer flex flex-col justify-center py-10 text-white gap-7 px-5 xl:px-0">
+            <div ref={ref} className="mainContainer hidden md:flex justify-center my-96 bg-[#091F48CC]/90">
+
+                <motion.div
+                                                      variants={zoomIn}
+                                                      initial="hidden"
+                                                      animate={inView ? 'visible' : 'hidden'}
+                 className="subContainer flex flex-col justify-center py-10 text-white gap-7 px-5 xl:px-0">
+                  
 
                     <p className='font-Inter font-bold italic text-lg'>Our Activities</p>
 
@@ -38,7 +67,7 @@ function OurActivities() {
                         </div>
 
 
-                </div>
+                </motion.div>
 
             </div>
 

@@ -1,10 +1,38 @@
+import { useInView } from 'react-intersection-observer';
+import { motion } from 'framer-motion';
 import img from '/src/assets/images/aboutPageAboutSection.webp'
 
+
+const zoomIn = {
+  hidden: { opacity: 0, scale: 0.8 },
+  visible: {
+    opacity: 1,
+    scale: 1,
+    transition: {
+      duration: 1.0,
+      ease: 'easeOut',
+    },
+  },
+};
+
+
 function AboutSection () {
+
+ const { ref, inView } = useInView({
+    triggerOnce: true,  // Only trigger animation once
+    threshold: 0.2,      // Trigger when 40% of the section is visible
+  });
+
     return(
         <>
                     {/*LARGE SCREENS */}
-            <div className="mainContainer hidden md:flex justify-center my-40 ">
+            <div ref={ref} className="mainContainer hidden md:flex justify-center my-70 ">
+               <motion.div
+                                      variants={zoomIn}
+                                      initial="hidden"
+                                      animate={inView ? 'visible' : 'hidden'}
+                                      className="w-full flex flex-col items-center gap-6"
+                                    >
                     
                 <div className="subContainer xl:w-[80%] md:w-[90%] h-full">
                     <p className="font-Roboto text-[#EFA51E] font-bold text-3xl mb-10">ABOUT ACCSE</p>
@@ -41,6 +69,8 @@ function AboutSection () {
 
 
                 </div>
+
+                </motion.div>
 
             </div>
 
