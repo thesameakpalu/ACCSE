@@ -74,7 +74,7 @@ function ContactUs() {
             </div>
 
                 {/*SMALL SCREENS */}
-            <div className="mainContainer pt-30 mb-20 flex flex-col items-center">
+            <div className="mainContainer pt-30 mb-20 flex flex-col md:hidden items-center">
   <div className="subContainer w-[90%]">
     <p className="font-Roboto font-bold text-[#EFA51E] text-2xl text-center mb-6">CONTACT US</p>
 

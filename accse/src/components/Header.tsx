@@ -115,7 +115,10 @@ function Header() {
                 }, []);
 
                 // Check if the current page is Home to conditionally apply transparency
-const isHomeOrAboutPage = location.pathname === "/" || location.pathname === "/About";
+const isHomeOrAboutPage =
+  location.pathname === "/" ||
+  location.pathname === "/About" ||
+  location.pathname === "/News";
                 
                         
 
@@ -181,7 +184,7 @@ const isHomeOrAboutPage = location.pathname === "/" || location.pathname === "/A
           <ul className={`flex lg:gap-x-10 md:gap-x-5 font-Lato  font-bold lg:text-xl md:text-base  relative 
               ${isFixed ? "text-black" : (isHomeOrAboutPage ? "text-white " : "text-black ")}
             `}>
-            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/Projects" }, { name: "News", path: "/Projects" }, { name: "Documents", path: "/Projects" }, { name: "Regional Offices", path: "/Projects" } ].map((item) => (
+            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/" }, { name: "News", path: "/News" }, { name: "Documents", path: "/" }, { name: "Regional Offices", path: "/" } ].map((item) => (
               <Link key={item.name} to={item.path}>
                 <li className={`relative group hover:text-[#EFA51E] ${location.pathname === item.path ? "" : ""}`}>
                   {item.name}
@@ -349,7 +352,7 @@ const isHomeOrAboutPage = location.pathname === "/" || location.pathname === "/A
                 <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>Projects</p>
                 </Link>
-                <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
+                <Link to="/News" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>News</p>
                 </Link>
                 <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>

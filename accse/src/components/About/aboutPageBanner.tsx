@@ -8,7 +8,7 @@ function AboutPageBanner() {
   {/* Wrapper for full image and torn edge */}
   <div className="relative w-full h-svh overflow-hidden">
     {/* Full background image */}
-    <img src={img} className="heroImg w-full h-[98%] object-cover" alt="Landing banner" />
+    <img src={img} className=" w-full h-full object-cover" alt="Landing banner" />
 
     {/* Overlay */}
     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-black to-[#66666600]/0"></div>
