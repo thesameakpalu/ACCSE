@@ -1,6 +1,10 @@
 import {Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from 'react';
 import Home from "../pages/Home";
+import About from "../pages/About";
+import Contact from "../pages/Contact";
+import News from "../pages/News";
+import ScrollToTop from "../scrollToTop";
 
 const  routeTitles: Record<string, string> = {
     '/': 'Home | ACCSE',
@@ -47,9 +51,13 @@ function AppRoutes() {
 
     return(
         <>
+                <ScrollToTop />
                 <TitleManager />
                 <Routes>
                     <Route path="/" element={<Home />} />
+                    <Route path="/About" element={<About />} />
+                    <Route path="/Contact" element={<Contact />} />
+                    <Route path="/News" element={<News />} />
                     
                 </Routes>
 

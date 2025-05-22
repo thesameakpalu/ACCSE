@@ -115,7 +115,10 @@ function Header() {
                 }, []);
 
                 // Check if the current page is Home to conditionally apply transparency
-    const isHomePage = location.pathname === "/";
+const isHomeOrAboutPage =
+  location.pathname === "/" ||
+  location.pathname === "/About" ||
+  location.pathname === "/News";
                 
                         
 
@@ -124,7 +127,7 @@ function Header() {
                         {/* LARGE SCREEN HEADER--ALL ELEMENTS ON THE HEADER FOR BIG SCREENS */}
           <div ref={headerRef} className={`mainContainer mx-auto hidden  md:block md:fixed z-40 w-full transition-opacity duration-500
                 ${isVisible ? "opacity-100" : "opacity-0"} 
-                ${isFixed ? "bg-white shadow-lg" : (isHomePage ? "bg-transparent " : "bg-white shadow-lg")}
+                ${isFixed ? "bg-white shadow-lg" : (isHomeOrAboutPage ? "bg-transparent " : "bg-white shadow-lg")}
               `} >
                 <div className="flex justify-between 2xl:justify-center 2xl:gap-[1200px] px-10 md:py-2 lg:py-3 2xl:py-6 items-center  bg-white shadow-[0_0px_5px_rgba(0,0,0,0.2)]"> {/*SOCIAL MEDIA ICONS AND DONATE BUTTON */}
                         
@@ -176,12 +179,12 @@ function Header() {
 
         {/* Navigation */}
         <nav className={` rounded-full md:px-6 lg:px-8 md:py-2 lg:py-3 xl:py-3 xl:px-10 md:mr-3 lg:mr-5  
-            ${isFixed ? "bg-white" : (isHomePage ? "bg-black/30 " : "bg-white ")}
+            ${isFixed ? "bg-white" : (isHomeOrAboutPage ? "bg-black/30 " : "bg-white ")}
           `}>
           <ul className={`flex lg:gap-x-10 md:gap-x-5 font-Lato  font-bold lg:text-xl md:text-base  relative 
-              ${isFixed ? "text-black" : (isHomePage ? "text-white " : "text-black ")}
+              ${isFixed ? "text-black" : (isHomeOrAboutPage ? "text-white " : "text-black ")}
             `}>
-            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/Projects" }, { name: "News", path: "/Projects" }, { name: "Documents", path: "/Projects" }, { name: "Regional Offices", path: "/Projects" } ].map((item) => (
+            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/" }, { name: "News", path: "/News" }, { name: "Documents", path: "/" }, { name: "Regional Offices", path: "/" } ].map((item) => (
               <Link key={item.name} to={item.path}>
                 <li className={`relative group hover:text-[#EFA51E] ${location.pathname === item.path ? "" : ""}`}>
                   {item.name}
@@ -270,7 +273,9 @@ function Header() {
 
         {/* Contact Us Button */}
         <div className="header-button mr-20">
-          <button className="font-Inter font-bold md:text-[10px]  text-white border border-white px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110">
+          <button className={`font-Inter font-bold md:text-[10px]   border  px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110 
+            ${isFixed ? "border-black text-black" : (isHomeOrAboutPage ? "text-white border-white " : "border-black text-black ")}
+            `}>
             <Link to="/Contact">Contact Us</Link>
           </button>
         </div>
@@ -281,7 +286,7 @@ function Header() {
 
             <div ref={headerRef} className={`main w-full mx-auto block md:hidden fixed z-40 transition-opacity duration-500  
                  ${isVisible ? "opacity-100" : "opacity-0"} 
-                 ${isFixed ? "bg-white shadow-lg" : (isHomePage ? "bg-transparent" : "bg-white shadow-lg")}`}>
+                 ${isFixed ? "bg-white shadow-lg" : (isHomeOrAboutPage ? "bg-transparent" : "bg-white shadow-lg")}`}>
   <div className="headerSmallScreen flex justify-between items-center mx-auto max-w-[90%]"> 
     <div className='logoSmallScreens flex justify-between  items-center '>
       <img className="h-20" src={logo} alt="YCLIP'S Logo" />
@@ -347,7 +352,7 @@ function Header() {
                 <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>Projects</p>
                 </Link>
-                <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
+                <Link to="/News" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>News</p>
                 </Link>
                 <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
@@ -444,9 +449,9 @@ function Header() {
                     <div className="flex justify-center gap-20 mb-5">
                              <button className="bg-[#1D7948] text-sm text-white font-Inter rounded-md px-2 py-1 ">Donate</button>
                              
-                            <button className='font-ISsans text-[10px] text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110'>
+                           <Link to='/Contact'> <button className='font-ISsans text-[10px] text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110'>
                               Contact Us
-                            </button>
+                            </button> </Link>
       
 
                         </div>
