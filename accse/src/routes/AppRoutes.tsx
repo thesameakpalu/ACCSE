@@ -2,6 +2,7 @@ import {Routes, Route, useLocation } from "react-router-dom";
 import { useEffect } from 'react';
 import Home from "../pages/Home";
 import About from "../pages/About";
+import Contact from "../pages/Contact";
 import ScrollToTop from "../scrollToTop";
 
 const  routeTitles: Record<string, string> = {
@@ -54,6 +55,7 @@ function AppRoutes() {
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/About" element={<About />} />
+                    <Route path="/Contact" element={<Contact />} />
                     
                 </Routes>
 

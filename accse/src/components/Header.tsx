@@ -270,7 +270,9 @@ const isHomeOrAboutPage = location.pathname === "/" || location.pathname === "/A
 
         {/* Contact Us Button */}
         <div className="header-button mr-20">
-          <button className="font-Inter font-bold md:text-[10px]  text-white border border-white px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110">
+          <button className={`font-Inter font-bold md:text-[10px]   border  px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110 
+            ${isFixed ? "border-black text-black" : (isHomeOrAboutPage ? "text-white border-white " : "border-black text-black ")}
+            `}>
             <Link to="/Contact">Contact Us</Link>
           </button>
         </div>
@@ -444,9 +446,9 @@ const isHomeOrAboutPage = location.pathname === "/" || location.pathname === "/A
                     <div className="flex justify-center gap-20 mb-5">
                              <button className="bg-[#1D7948] text-sm text-white font-Inter rounded-md px-2 py-1 ">Donate</button>
                              
-                            <button className='font-ISsans text-[10px] text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110'>
+                           <Link to='/Contact'> <button className='font-ISsans text-[10px] text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110'>
                               Contact Us
-                            </button>
+                            </button> </Link>
       
 
                         </div>
