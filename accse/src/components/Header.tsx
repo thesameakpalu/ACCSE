@@ -349,13 +349,13 @@ const isHomeOrAboutPage =
                 <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>About</p>
                 </Link>
-                <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
+                <Link to="" className={`${location.pathname === "" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>Projects</p>
                 </Link>
-                <Link to="/News" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
+                <Link to="/News" className={`${location.pathname === "/News" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>News</p>
                 </Link>
-                <Link to="/About" className={`${location.pathname === "/About" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
+                <Link to="" className={`${location.pathname === "" ? "text-[#218adb]" : "text-black hover:text-gray-600"}`}>
                   <p>Documents</p>
                 </Link>
 
@@ -394,7 +394,7 @@ const isHomeOrAboutPage =
                   )}
                 </div> */}
 
-                <Link to="/Projects" className={`${location.pathname === "/Projects" ? "text-[#218adb]" : "text-black hover:text-gray-400"}`}>
+                <Link to="" className={`${location.pathname === "" ? "text-[#218adb]" : "text-black hover:text-gray-400"}`}>
                   <p>Regional Offices</p>
                 </Link>
               </div>

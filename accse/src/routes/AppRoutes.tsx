@@ -4,17 +4,18 @@ import Home from "../pages/Home";
 import About from "../pages/About";
 import Contact from "../pages/Contact";
 import News from "../pages/News";
+import AppGallery from "../components/Gallery";
 import ScrollToTop from "../scrollToTop";
 
 const  routeTitles: Record<string, string> = {
     '/': 'Home | ACCSE',
-    '/about': 'About | YClip',
-    '/innovators': 'Innovators | YClip',
+    '/About': 'About | ACCSE',
+    '/Gallery': 'Gallery | ACCSE',
     '/projects': 'Projects | YClip',
     '/support': 'Support | YClip',
     '_projects': 'Projects | YClip',
-    '/contact': 'Contact | YClip',
-    '/news': 'News | YClip',
+    '/Contact': 'Contact | ACCSE',
+    '/News': 'News | ACCSE',
       };
 
       function TitleManager() {
@@ -58,6 +59,7 @@ function AppRoutes() {
                     <Route path="/About" element={<About />} />
                     <Route path="/Contact" element={<Contact />} />
                     <Route path="/News" element={<News />} />
+                    <Route path="/Gallery" element={<AppGallery />} />
                     
                 </Routes>
 
