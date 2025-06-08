@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import img1 from '/src/assets/images/news/1.webp'
 import img2 from '/src/assets/images/news/2.webp'
 import img3 from '/src/assets/images/news/3.webp'
@@ -5,6 +6,7 @@ import img4 from '/src/assets/images/news/4.webp'
 import img5 from '/src/assets/images/news/5.webp'
 import img6 from '/src/assets/images/news/6.webp'
 import img7 from '/src/assets/images/news/7.webp'
+
 
 
 
@@ -29,9 +31,12 @@ function NewsContents() {
       <p className="mt-3 text-lg font-medium font-Roboto p-3 ">
         Climate Change education at the < br /> Department of Animal Biology <br /> and Conservation Science, <br /> University of Ghana
       </p>
+       
+        <Link to="/News/CLIMATE_EDUCATION">
       <button className="font-ISsans self-start mt-4 ml-3 text-sm text-white bg-[#E5A615] px-5 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-105">
         Read
       </button>
+      </Link>
       </div>
     </div>
 
@@ -42,9 +47,11 @@ function NewsContents() {
       <p className="mt-3 text-lg font-medium font-Roboto p-3 ">
         ACCSE and KUNTSFORD <br /> University college have <br /> announced the signing of a <br /> Memorandum of Understanding <br /> (MOU)
       </p>
+       <Link to="/News/CSSE_KNUSTFORD">
       <button className="font-ISsans self-start mt-4 ml-3 text-sm text-white bg-[#E5A615] px-5 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-105">
         Read
       </button>
+      </Link>
       </div>
     </div>
 
@@ -55,9 +62,11 @@ function NewsContents() {
       <p className="mt-3 text-lg font-medium font-Roboto p-3 ">
          ACCSE partners GES and HBCU <br /> Green is set to launch the Ghana <br /> Globe Program and Greening <br /> Schools Initiative
       </p>
+      <Link to="/News/CSSE_GES_HBCU">
       <button className="font-ISsans self-start mt-4 ml-3 text-sm text-white bg-[#E5A615] px-5 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-105">
         Read
       </button>
+      </Link>
       </div>
     </div>
 
@@ -68,9 +77,11 @@ function NewsContents() {
       <p className="mt-3 text-lg font-medium font-Roboto p-3 ">
         COP 28 in Retrospect
       </p>
+      <Link to="/News/COP_28">
       <button className="font-ISsans self-start mt-4 ml-3 text-sm text-white bg-[#E5A615] px-5 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-105">
         Read
       </button>
+      </Link>
       </div>
     </div>
 
@@ -81,9 +92,11 @@ function NewsContents() {
       <p className="mt-3 text-lg font-medium font-Roboto p-3 ">
         COP 27 in Retrospect
       </p>
+      <Link to="/News/COP_27_IN_RETROSPECT">
       <button className="font-ISsans self-start mt-4 ml-3 text-sm text-white bg-[#E5A615] px-5 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-105">
         Read
       </button>
+      </Link>
       </div>
     </div>
 

@@ -65,13 +65,14 @@ function OurImpacts() {
 
                             <div className='flex'>
 
-                                   <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
+                             <a href='/Our_Impacts#Action_For_Climate_Empowerment'>  <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
                                     <svg className='hover:text-blue-200' width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.11 4.35355C17.3052 4.15829 17.3052 3.84171 17.11 3.64645L13.928 0.464466C13.7327 0.269204 13.4161 0.269204 13.2209 0.464466C13.0256 0.659728 13.0256 0.976311 13.2209 1.17157L16.0493 4L13.2209 6.82843C13.0256 7.02369 13.0256 7.34027 13.2209 7.53553C13.4161 7.7308 13.7327 7.7308 13.928 7.53553L17.11 4.35355ZM-0.00219727 4V4.5H16.7564V4V3.5H-0.00219727V4Z" fill="currentColor"/>
                                     </svg>
 
                                     </button>
+                              </a>      
                                     
                             </div>
                             </motion.div>
@@ -86,7 +87,7 @@ function OurImpacts() {
                             </div>
 
                             <div className='flex'>
-
+                                    <a href='/Our_Impacts#Biodiversity_Conservation'>
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
                                     <svg className='hover:text-blue-200' width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -94,6 +95,7 @@ function OurImpacts() {
                                     </svg>
 
                                     </button>
+                                    </a>
                                     
                             </div>
                             </motion.div>
@@ -108,7 +110,7 @@ function OurImpacts() {
                             </div>
 
                             <div className='flex'>
-
+                                     <a href='/Our_Impacts#Climate_Resilient_Agriculture'>
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
                                     <svg className='hover:text-blue-200' width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -116,6 +118,7 @@ function OurImpacts() {
                                     </svg>
 
                                     </button>
+                                    </a>
                                     
                             </div>
                             </motion.div>
@@ -136,6 +139,8 @@ function OurImpacts() {
 
                             <div className='flex'>
 
+                                <a href='/Our_Impacts#Forest_Restoration'>
+
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
                                     <svg className='hover:text-blue-200' width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -143,7 +148,7 @@ function OurImpacts() {
                                     </svg>
 
                                     </button>
-                                    
+                                    </a>
                             </div>
                             </motion.div>
                                             {/*SVG 5 */}
@@ -158,6 +163,8 @@ function OurImpacts() {
 
                             <div className='flex'>
 
+                                <a href='/Our_Impacts#Waste_Management'>
+
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
                                     <svg className='hover:text-blue-200' width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -165,7 +172,7 @@ function OurImpacts() {
                                     </svg>
 
                                     </button>
-                                    
+                                    </a>
                             </div>
                             </motion.div>
                         </div>
@@ -201,14 +208,14 @@ function OurImpacts() {
                             </div>
 
                             <div className='flex'>
-
+                                     <a href='/Our_Impacts#action_for_climate_empowerment'>
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
                                     <svg className='hover:text-blue-200' width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.11 4.35355C17.3052 4.15829 17.3052 3.84171 17.11 3.64645L13.928 0.464466C13.7327 0.269204 13.4161 0.269204 13.2209 0.464466C13.0256 0.659728 13.0256 0.976311 13.2209 1.17157L16.0493 4L13.2209 6.82843C13.0256 7.02369 13.0256 7.34027 13.2209 7.53553C13.4161 7.7308 13.7327 7.7308 13.928 7.53553L17.11 4.35355ZM-0.00219727 4V4.5H16.7564V4V3.5H-0.00219727V4Z" fill="currentColor"/>
                                     </svg>
 
-                                    </button>
+                                    </button> </a>
                                     
                             </div>
                             </div>
@@ -221,14 +228,14 @@ function OurImpacts() {
                             </div>
 
                             <div className='flex'>
-
+                                     <a href='/Our_Impacts#biodiversity_conservation'>
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
                                     <svg className='hover:text-blue-200' width="18" height="8" viewBox="0 0 18 8" fill="none" xmlns="http://www.w3.org/2000/svg">
                                     <path d="M17.11 4.35355C17.3052 4.15829 17.3052 3.84171 17.11 3.64645L13.928 0.464466C13.7327 0.269204 13.4161 0.269204 13.2209 0.464466C13.0256 0.659728 13.0256 0.976311 13.2209 1.17157L16.0493 4L13.2209 6.82843C13.0256 7.02369 13.0256 7.34027 13.2209 7.53553C13.4161 7.7308 13.7327 7.7308 13.928 7.53553L17.11 4.35355ZM-0.00219727 4V4.5H16.7564V4V3.5H-0.00219727V4Z" fill="currentColor"/>
                                     </svg>
 
-                                    </button>
+                                    </button> </a>
                                     
                             </div>
                             </div>
@@ -241,6 +248,7 @@ function OurImpacts() {
                             </div>
 
                             <div className='flex'>
+                                    <a href='/Our_Impacts#climate_resilient_agriculture'>
 
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
@@ -248,7 +256,7 @@ function OurImpacts() {
                                     <path d="M17.11 4.35355C17.3052 4.15829 17.3052 3.84171 17.11 3.64645L13.928 0.464466C13.7327 0.269204 13.4161 0.269204 13.2209 0.464466C13.0256 0.659728 13.0256 0.976311 13.2209 1.17157L16.0493 4L13.2209 6.82843C13.0256 7.02369 13.0256 7.34027 13.2209 7.53553C13.4161 7.7308 13.7327 7.7308 13.928 7.53553L17.11 4.35355ZM-0.00219727 4V4.5H16.7564V4V3.5H-0.00219727V4Z" fill="currentColor"/>
                                     </svg>
 
-                                    </button>
+                                    </button> </a>
                                     
                             </div>
                             </div>
@@ -266,6 +274,7 @@ function OurImpacts() {
                             </div>
 
                             <div className='flex'>
+                                <a href='/Our_Impacts#forest_restoration'>
 
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
@@ -273,7 +282,7 @@ function OurImpacts() {
                                     <path d="M17.11 4.35355C17.3052 4.15829 17.3052 3.84171 17.11 3.64645L13.928 0.464466C13.7327 0.269204 13.4161 0.269204 13.2209 0.464466C13.0256 0.659728 13.0256 0.976311 13.2209 1.17157L16.0493 4L13.2209 6.82843C13.0256 7.02369 13.0256 7.34027 13.2209 7.53553C13.4161 7.7308 13.7327 7.7308 13.928 7.53553L17.11 4.35355ZM-0.00219727 4V4.5H16.7564V4V3.5H-0.00219727V4Z" fill="currentColor"/>
                                     </svg>
 
-                                    </button>
+                                    </button> </a>
                                     
                             </div>
                             </div>
@@ -286,6 +295,7 @@ function OurImpacts() {
                             </div>
 
                             <div className='flex'>
+                                    <a href='/Our_Impacts#waste_management'>
 
                                    <button className="flex items-center gap-2 text-[#E5A615] text-sm font-medium hover:text-blue-200">
                                     Discover how
@@ -293,7 +303,7 @@ function OurImpacts() {
                                     <path d="M17.11 4.35355C17.3052 4.15829 17.3052 3.84171 17.11 3.64645L13.928 0.464466C13.7327 0.269204 13.4161 0.269204 13.2209 0.464466C13.0256 0.659728 13.0256 0.976311 13.2209 1.17157L16.0493 4L13.2209 6.82843C13.0256 7.02369 13.0256 7.34027 13.2209 7.53553C13.4161 7.7308 13.7327 7.7308 13.928 7.53553L17.11 4.35355ZM-0.00219727 4V4.5H16.7564V4V3.5H-0.00219727V4Z" fill="currentColor"/>
                                     </svg>
 
-                                    </button>
+                                    </button> </a>
                                     
                             </div>
                             </div>
