@@ -62,10 +62,17 @@ function ContactUs() {
                     
                     
                     <div className=' mt-30 w-full h-[500px]'>
+                      <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.4313502413775!2d-0.19879932650164428!3d5.650567332694577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9c7ebaeabe93%3A0xd78257e67498c1a0!2sUniversity%20of%20Ghana!5e0!3m2!1sen!2sgh!4v1749426006935!5m2!1sen!2sgh" 
+                      width="600" height="450"
+                        className="w-full h-full border-0"
+                        allowFullScreen
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade">
 
-                    <svg className='w-full'  viewBox="0 0 1322 554" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="1322" height="554" fill="#D9D9D9"/>
-                    </svg>
+                        </iframe>
+
+                    
 
                     </div>
 
@@ -128,9 +135,16 @@ function ContactUs() {
 
     {/* Optional: SVG Section for Visual Enhancement */}
     <div className='mt-20 w-full h-72'>
-      <svg className='w-full h-full' viewBox="0 0 922 554" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1322" height="554" fill="#D9D9D9" />
-      </svg>
+                            <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3970.4313502413775!2d-0.19879932650164428!3d5.650567332694577!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xfdf9c7ebaeabe93%3A0xd78257e67498c1a0!2sUniversity%20of%20Ghana!5e0!3m2!1sen!2sgh!4v1749426006935!5m2!1sen!2sgh" 
+                      width="600" height="450"
+                        className="w-full h-full border-0"
+                        allowFullScreen
+                        loading="lazy" 
+                        referrerPolicy="no-referrer-when-downgrade">
+
+                        </iframe>
+
     </div>
   </div>
 </div>
