@@ -184,7 +184,7 @@ const isHomeOrAboutPage =
           <ul className={`flex lg:gap-x-10 md:gap-x-5 font-Lato  font-bold lg:text-xl md:text-base  relative 
               ${isFixed ? "text-black" : (isHomeOrAboutPage ? "text-white " : "text-black ")}
             `}>
-            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "/" }, { name: "News", path: "/News" }, { name: "Documents", path: "/" }, { name: "Regional Offices", path: "/" } ].map((item) => (
+            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "" }, { name: "News", path: "/News" }, { name: "Documents", path: "" }, { name: "Regional Offices", path: "" } ].map((item) => (
               <Link key={item.name} to={item.path}>
                 <li className={`relative group hover:text-[#EFA51E] ${location.pathname === item.path ? "" : ""}`}>
                   {item.name}
