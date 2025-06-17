@@ -39,22 +39,22 @@ function WhatSetsUs() {
         {
             icon: svg1,
             title: 'Youth at the center',
-            content: 'We believe in empowering young people to drive change by giving them leadership roles and ownership.',
+            content: 'We prioritize youth voices in climate action by equipping young leaders with tools, mentorship, and platforms to innovate and lead change. Our programs are designed to tap into the creativity and energy of the next generation',
         },
         {
             icon: svg2,
             title: 'Education as a First Approach',
-            content: 'We prioritize learning and capacity building as the foundation for all development efforts.',
+            content: 'We believe education is the foundation of long-term impact. Through workshops, school outreach, and digital campaigns, we empower people with the knowledge they need to understand and tackle climate challenges effectively.',
         },
         {
             icon: svg3,
             title: 'Community-driven Solutions',
-            content: 'All solutions we build come from deep engagement with the local communities we serve.',
+            content: 'Our initiatives begin with the people most affected. We work hand-in-hand with local communities to co-create sustainable solutions that address their unique environmental and socio-economic needs.',
         },
         {
             icon: svg4,
             title: 'Global Engagement',
-            content: 'We connect local actions to global networks and policies, making our impact broader.',
+            content: 'Climate change knows no borders, and neither do we. We connect local action to global movements, collaborating with international organizations and amplifying voices from the Global South on the world stage.',
         },
     ];
 
