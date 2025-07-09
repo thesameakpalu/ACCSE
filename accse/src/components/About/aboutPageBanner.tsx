@@ -17,13 +17,13 @@ function AboutPageBanner() {
     <div className="absolute inset-0 z-20 flex gap-5 items-center justify-center pt-30 px-6 ml-10 text-white">
       {/* Left Text */}
       <div className="w-1/2 flex justify-center items-center">
-        <p className="md:text-2xl lg:text-4xl 2xl:text-[150px] mt-1 font-bold font-Inter">
+        <p className=" fade-in-up opacity-0 md:text-2xl lg:text-4xl 2xl:text-[150px] mt-1 font-bold font-Inter" style={{ animationDelay: '0.5s' }}>
           DONATE TODAY TO HELP <br className='md:hidden lg:block' /> SAFEGUARD AND REBUILD OUR <br className='md:hidden xl:block' /> ENVIRONMENT
         </p>
       </div>
 
       {/* Right Form */}
-      <div className="w-1/2 flex justify-center items-center">
+      <div className=" fade-in-right opacity-0 w-1/2 flex justify-center items-center" style={{ animationDelay: '0.8s' }}>
         <form className="space-y-8 w-[90%] border border-white py-5 px-10 font-Roboto">
           <div>
             <label htmlFor="name" className="block mb-2 font-medium">Name</label>
@@ -58,13 +58,13 @@ function AboutPageBanner() {
     <div className="absolute inset-0 z-20 flex flex-col pt-30 gap-10 items-center justify-center  px-4 text-white">
       {/* Text Section */}
       <div className="text-center px-2">
-        <p className="text-xl sm:text-2xl font-bold font-Inter leading-relaxed">
+        <p className=" fade-in-up opacity-0 text-xl sm:text-2xl font-bold font-Inter leading-relaxed" style={{ animationDelay: '0.5s' }}>
           DONATE TODAY TO HELP  SAFEGUARD AND REBUILD OUR  ENVIRONMENT
         </p>
       </div>
 
       {/* Form Section */}
-      <form className="w-full max-w-sm border border-white p-4 space-y-4 font-Roboto">
+      <form className=" fade-in-right opacity-0 w-full max-w-sm border border-white p-4 space-y-4 font-Roboto" style={{ animationDelay: '0.8s' }}>
         <div>
           <label htmlFor="name" className="block mb-1 font-medium">Name</label>
           <input id="name" type="text" className="w-full p-1 border border-white rounded focus:outline-none focus:border-[#1D7948]" />

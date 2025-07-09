@@ -18,7 +18,7 @@ function NewsBanner() {
     <div className="absolute inset-0 z-20 flex gap-5 items-center justify-start pt-30 px-6 ml-10 text-white">
       {/* Left Text */}
       <div className=" flex justify-center items-center">
-        <p className="md:text-2xl lg:text-4xl 2xl:text-[100px] mt-1 font-bold font-Inter uppercase">
+        <p className="fade-in-up opacity-0 md:text-2xl lg:text-4xl 2xl:text-[100px] mt-1 font-bold font-Inter uppercase" style={{ animationDelay: '0.5s' }}>
          Follow our journey as we <br /> empower communities and <br /> drive local climate <br /> solutions.
         </p>
       </div>
@@ -40,7 +40,7 @@ function NewsBanner() {
 
     {/* Contents */}
     <div className="absolute inset-0 z-20 flex items-center justify-center px-4 text-white">
-      <p className="text-lg text-center font-bold font-Inter uppercase leading-snug">
+      <p className="fade-in-up opacity-0 text-lg text-center font-bold font-Inter uppercase leading-snug" style={{ animationDelay: '0.5s' }}>
         Follow our journey as we <br /> empower communities and <br /> drive local climate <br /> solutions.
       </p>
     </div>
