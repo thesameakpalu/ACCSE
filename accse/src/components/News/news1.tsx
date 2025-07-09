@@ -34,11 +34,19 @@ function News1() {
                              </p>
                         </div>
 
-                        <div className=' mt-30 w-full h-[500px]'>
+                        <div className=' my-30 w-full h-[500px]'>
 
-                    <svg className='w-full'  viewBox="0 0 1322 554" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <rect width="1322" height="554" fill="#D9D9D9"/>
-                    </svg>
+                                      <iframe 
+                                      width="600" 
+                                      height="450" 
+                                      className="w-full h-full border-0"
+                                      src="https://www.youtube.com/embed/gwPb390-eBs?si=XIMCHM8qW5peFyOH" 
+                                      title="YouTube video player" frameBorder="0" 
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                      referrerPolicy="strict-origin-when-cross-origin" 
+                                      allowFullScreen>
+
+                                      </iframe>
 
                     </div>
 
@@ -75,10 +83,18 @@ function News1() {
         </p>        
       </div>
 
-        <div className='my-20 w-full h-72'>
-      <svg className='w-full h-full' viewBox="0 0 922 554" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="1322" height="554" fill="#D9D9D9" />
-      </svg>
+        <div className='my-20 w-full h-52'>
+          <iframe 
+                                      width="600" 
+                                      height="208" 
+                                      className="w-full h-full border-0"
+                                      src="https://www.youtube.com/embed/gwPb390-eBs?si=XIMCHM8qW5peFyOH" 
+                                      title="YouTube video player" frameBorder="0" 
+                                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                      referrerPolicy="strict-origin-when-cross-origin" 
+                                      allowFullScreen>
+
+                                      </iframe>
          </div>
 
       
