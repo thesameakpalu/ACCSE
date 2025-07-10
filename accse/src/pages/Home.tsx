@@ -27,6 +27,32 @@ function Home() {
         <meta property="og:image" content="https://www.ccseafrica.org/assets/9-w2TD1G56.webp" />
         <meta property="og:url" content="https://www.ccseafrica.org" />
         <meta property="og:site_name" content="ACCSE" />
+
+        <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          "name": "Africa Center for Climate and Sustainability Empowerment",
+          "alternateName": "ACCSE",
+          "url": "https://www.ccseafrica.org",
+          "logo": "https://www.ccseafrica.org/assets/logo-DG_O7rUd.webp",
+          "description": "ACCSE is a youth-led nonprofit in Ghana empowering youth and women to develop innovative climate solutions.",
+          "sameAs": [
+            "https://www.facebook.com/share/1LBDGmr97P/?mibextid=wwXIfr",             
+            "https://www.linkedin.com/company/ccseghana/",
+            "https://youtube.com/@ccseghana?si=u_DaZhJitZ8qkWDP"
+          ],
+          "contactPoint": [
+            {
+              "@type": "ContactPoint",
+              "email": "ccseghana@gmail.com",
+              "contactType": "customer support",
+              "areaServed": "GH",
+              "availableLanguage": "English"
+            }
+          ]
+        })}
+      </script>
       
     </Helmet>
       
