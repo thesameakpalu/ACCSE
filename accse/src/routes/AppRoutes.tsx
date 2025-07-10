@@ -1,16 +1,16 @@
 import {Routes, Route, useLocation } from "react-router-dom";
-import { useEffect } from 'react';
-import Home from "../pages/Home";
-import About from "../pages/About";
-import Contact from "../pages/Contact";
-import News from "../pages/News";
-import AppGallery from "../components/Gallery";
-import OurImpacts from "../pages/OurImpact";
-import News5 from "../components/News/news5";
-import News4 from "../components/News/news4";
-import News3 from "../components/News/news3";
-import News2 from "../components/News/news2";
-import News1 from "../components/News/news1";
+import { useEffect, lazy, Suspense   } from 'react';
+const Home = lazy(() => import("../pages/Home"));
+const About = lazy(() => import("../pages/About"));
+const Contact = lazy(() => import("../pages/Contact"));
+const News = lazy(() => import("../pages/News"));
+const AppGallery = lazy(() => import("../components/Gallery"));
+const OurImpacts = lazy(() => import("../pages/OurImpact"));
+const News1 = lazy(() => import("../components/News/news1"));
+const News2 = lazy(() => import("../components/News/news2"));
+const News3 = lazy(() => import("../components/News/news3"));
+const News4 = lazy(() => import("../components/News/news4"));
+const News5 = lazy(() => import("../components/News/news5"));
 import ScrollToTop from "../scrollToTop";
 import ScrollToHashElement from "../components/scrollToHash";
 
@@ -62,6 +62,7 @@ function AppRoutes() {
                 <ScrollToTop />
                 <ScrollToHashElement />
                 <TitleManager />
+                <Suspense fallback={<div className="text-center py-10">Loading...</div>}>
                 <Routes>
                     <Route path="/" element={<Home />} />
                     <Route path="/About" element={<About />} />
@@ -76,6 +77,7 @@ function AppRoutes() {
                     <Route path="/Our_Impacts" element={<OurImpacts />} />
                     
                 </Routes>
+                </Suspense>
 
         </>
     )

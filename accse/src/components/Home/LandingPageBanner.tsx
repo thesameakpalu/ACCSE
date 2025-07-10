@@ -9,10 +9,10 @@ function LandingpageBanner() {
         {/* Wrapper for full image and torn edge */}
         <div className="relative w-full h-svh overflow-hidden">
           {/* Full background image */}
-          <img  src={img} className="heroImg w-full h-[98%] object-cover" alt="Landing banner" />
+          <img  src={img} className="heroImg w-full h-[98%] object-cover" alt="Landing banner"  fetchPriority="high" />
 
           {/* Torn edge image at bottom of full image */}
-          <img src={TornPagemockup} className="absolute bottom-0 left-0 w-full h-[40px] object-cover pointer-events-none" alt="Torn edge" />
+          <img src={TornPagemockup} className="absolute bottom-0 left-0 w-full h-[40px] object-cover pointer-events-none"  fetchPriority="high" alt="Torn edge" />
 
           {/*1st Text Content */}
           <div className="absolute inset-0 z-20 flex flex-col gap-5 items-start justify-center  pt-30 px-6 ml-10 text-white ">
@@ -37,8 +37,8 @@ function LandingpageBanner() {
           {/* Mobile View */}
       <div id="hero-section-mobile" className="relative w-full block md:hidden">
         <div className="relative w-full h-[85vh] overflow-hidden">
-          <img src={img} className="heroImg w-full h-[98%] object-cover" alt="Landing banner mobile" />
-          <img  src={TornPagemockup} className="absolute bottom-0 left-0 w-full h-[40px] object-cover z-10 pointer-events-none" alt="Torn edge mobile"  />
+          <img src={img} className="heroImg w-full h-[98%] object-cover"  fetchPriority="high" alt="Landing banner mobile" />
+          <img  src={TornPagemockup} className="absolute bottom-0 left-0 w-full h-[40px] object-cover z-10 pointer-events-none"  fetchPriority="high" alt="Torn edge mobile"  />
 
             <div className="absolute inset-0 z-20 flex flex-col gap-4 items-start justify-center px-4 pt-12  text-white">
 
