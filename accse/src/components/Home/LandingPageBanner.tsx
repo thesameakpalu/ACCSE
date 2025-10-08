@@ -7,7 +7,7 @@ function LandingpageBanner() {
               {/*BIG SCREEN VIEW */}
      <div id="hero-section" className="relative w-full hidden md:block">
         {/* Wrapper for full image and torn edge */}
-        <div className="relative w-full h-svh overflow-hidden">
+        <div className="relative w-full h-[75vh]  overflow-hidden">
           {/* Full background image */}
           <img  src={img} className="heroImg w-full h-[98%] object-cover" alt="Landing banner"  fetchPriority="high" />
 
@@ -15,7 +15,7 @@ function LandingpageBanner() {
           <img src={TornPagemockup} className="absolute bottom-0 left-0 w-full h-[40px] object-cover pointer-events-none"  fetchPriority="high" alt="Torn edge" />
 
           {/*1st Text Content */}
-          <div className="absolute inset-0 z-20 flex flex-col gap-5 items-start justify-center  pt-30 px-6 ml-10 text-white ">
+          <div className="absolute inset-0 z-20 flex flex-col gap-5 items-start justify-center  pt-10 px-6 ml-10 text-white ">
             <p className="fade-in-up opacity-0 md:text-3xl lg:text-5xl 2xl:text-[150px] text-[#1DDA76] font-bold font-Roboto " style={{ animationDelay: '0.5s' }}>Empowering</p>
             <p className=" fade-in-up opacity-0 md:text-3xl lg:text-5xl 2xl:text-[150px] mt-1 font-bold   font-Roboto" style={{ animationDelay: '0.8s' }}>
               The Next Generation of Climate <br /> Innovators and Social <br /> Entrepreneurs

@@ -1,16 +1,16 @@
 import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import smallImage from '/src/assets/images/AboutSmallImage.webp';
 import largeImage from '/src/assets/images/AboutLargeImage.webp';
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.8,
-      ease: 'easeOut',
+      ease: 'easeOut' as const, // 👈 fixes the type error
     },
   },
 };
@@ -38,7 +38,7 @@ function HomePageAboutSection () {
   <div className="subContainer flex flex-col md:flex-row items-center justify-center md:gap-32 h-auto md:h-[600px]">
     
     {/* IMAGE SECTION */}
-    <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] flex-shrink-0">
+    <div className="relative w-[300px] h-[300px] md:w-[400px] md:h-[400px] lg:w-[400px] lg:h-[400px] flex-shrink-0">
       {/* Big Circular Image */}
       <img
         src={largeImage}
@@ -55,7 +55,7 @@ function HomePageAboutSection () {
     </div>
 
     {/* TEXT SECTION */}
-    <div className="mt-10 md:mt-0 flex flex-col gap-6 w-full md:w-[500px]">
+    <div className="mt-10 md:mt-0 flex flex-col gap-6 w-full ">
       <div className="space-y-5 text-center md:text-left">
         <p className="text-[#EFA51E] lg:text-2xl md:text-xl font-Inter font-bold">About Us</p>
         <p className="text-[#1D7948] lg:text-xl md:text-lg font-Roboto font-medium">
