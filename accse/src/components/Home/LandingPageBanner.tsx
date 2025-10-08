@@ -4,35 +4,57 @@ import TornPagemockup from '/src/assets/images/tornPage-mockup.webp';
 function LandingpageBanner() {
   return (
     <>
-              {/*BIG SCREEN VIEW */}
-     <div id="hero-section" className="relative w-full hidden md:block">
-        {/* Wrapper for full image and torn edge */}
-        <div className="relative w-full h-[75vh]  overflow-hidden">
-          {/* Full background image */}
-          <img  src={img} className="heroImg w-full h-[98%] object-cover" alt="Landing banner"  fetchPriority="high" />
+             {/* BIG SCREEN VIEW */}
+<div id="hero-section" className="relative w-full hidden md:block">
+  {/* Wrapper for full image and torn edge */}
+  <div className="relative w-full h-[90vh] overflow-hidden">
+    {/* Full background image */}
+    <img  src={img} className="heroImg w-full h-full object-cover" alt="Landing banner" fetchPriority="high" />
 
-          {/* Torn edge image at bottom of full image */}
-          <img src={TornPagemockup} className="absolute bottom-0 left-0 w-full h-[40px] object-cover pointer-events-none"  fetchPriority="high" alt="Torn edge" />
+    {/* Torn edge image */}
+    <img
+      src={TornPagemockup}
+      className="absolute bottom-0 left-0 w-full h-[40px] object-cover pointer-events-none"
+      alt="Torn edge"
+      fetchPriority="high"
+    />
 
-          {/*1st Text Content */}
-          <div className="absolute inset-0 z-20 flex flex-col gap-5 items-start justify-center  pt-10 px-6 ml-10 text-white ">
-            <p className="fade-in-up opacity-0 md:text-3xl lg:text-5xl 2xl:text-[150px] text-[#1DDA76] font-bold font-Roboto " style={{ animationDelay: '0.5s' }}>Empowering</p>
-            <p className=" fade-in-up opacity-0 md:text-3xl lg:text-5xl 2xl:text-[150px] mt-1 font-bold   font-Roboto" style={{ animationDelay: '0.8s' }}>
-              The Next Generation of Climate <br /> Innovators and Social <br /> Entrepreneurs
-            </p>
+    {/* Text Content */}
+    <div className="absolute inset-0 z-20 flex flex-col pt-20 justify-center items-start gap-4 text-white px-[8%]">
+      <p
+        className="fade-in-up opacity-0 text-[#1DDA76] font-Roboto font-bold md:text-2xl lg:text-5xl 2xl:text-[120px] leading-tight"
+        style={{ animationDelay: '0.5s' }}
+      >
+        Empowering
+      </p>
 
-            <p className="fade-in-up opacity-0 text-lg 2xl:text-5xl mt-1 font-bold font-Inter" style={{ animationDelay: '1.0s' }}>
-              Developing profitable and locally appropriate solutions to climate  change <br /> mitigation and adaptation.
-            </p>
+      <p
+        className="fade-in-up opacity-0 font-Roboto font-bold md:text-2xl lg:text-3xl 2xl:text-[90px] leading-snug"
+        style={{ animationDelay: '0.8s' }}
+      >
+        The Next Generation of Climate <br />
+        Innovators and Social <br />
+        Entrepreneurs
+      </p>
 
-          <button className=" fade-in-up opacity-0 font-ISsans text-sm text-white bg-[#E5A615] px-3 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-110" style={{ animationDelay: '1.0s' }}>
-           Learn More
-          </button>
+      <p
+        className="fade-in-up opacity-0 font-Inter text-base lg:text-lg 2xl:text-3xl max-w-5xl leading-relaxed"
+        style={{ animationDelay: '1.0s' }}
+      >
+        Developing profitable and locally appropriate solutions to climate change
+        mitigation and adaptation.
+      </p>
 
-          </div>
+      <button
+        className="fade-in-up opacity-0 font-ISsans text-sm lg:text-base bg-[#E5A615] text-white px-4 py-2 mt-2 rounded-md hover:scale-105 transition-transform duration-300 ease-in-out"
+        style={{ animationDelay: '1.2s' }}
+      >
+        Learn More
+      </button>
+    </div>
+  </div>
+</div>
 
-        </div>
-      </div>
 
           {/* Mobile View */}
       <div id="hero-section-mobile" className="relative w-full block md:hidden">

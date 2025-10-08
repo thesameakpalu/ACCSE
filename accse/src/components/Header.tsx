@@ -125,7 +125,7 @@ const isHomeOrAboutPage =
     return(
         <>
                         {/* LARGE SCREEN HEADER--ALL ELEMENTS ON THE HEADER FOR BIG SCREENS */}
-          <div ref={headerRef} className={`mainContainer mx-auto hidden  md:block md:fixed z-40 w-full transition-opacity duration-500
+          <div ref={headerRef} className={`mainContainerHeader mx-auto hidden  md:block md:fixed z-40 w-full transition-opacity duration-500
                 ${isVisible ? "opacity-100" : "opacity-0"} 
                 ${isFixed ? "bg-white shadow-lg" : (isHomeOrAboutPage ? "bg-transparent " : "bg-white shadow-lg")}
               `} >

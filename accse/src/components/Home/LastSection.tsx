@@ -1,16 +1,16 @@
 import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import img1 from '/src/assets/images/lastSectionMask2.webp'
 import img2 from '/src/assets/images/lastSectionMask1.webp'
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
       duration: 0.8,
-      ease: 'easeOut',
+      ease: 'easeOut' as const, // 👈 fixes the type error
     },
   },
 };

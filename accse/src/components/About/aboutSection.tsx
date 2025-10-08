@@ -1,16 +1,16 @@
 import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import img from '/src/assets/images/aboutPageAboutSection.webp'
 
 
-const zoomIn = {
+const zoomIn: Variants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: {
     opacity: 1,
     scale: 1,
     transition: {
       duration: 1.0,
-      ease: 'easeOut',
+      ease: 'easeOut' as const, // ✅ fixes the type
     },
   },
 };

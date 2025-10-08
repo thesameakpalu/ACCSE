@@ -1,5 +1,5 @@
 import { useInView } from 'react-intersection-observer';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useState } from 'react';
 import takeNoteSticker from '/src/assets/images/takeNoteSticker.webp'
 import groupImg from '/src/assets/images/WhatSetsUsgroupImage.webp'
@@ -9,14 +9,14 @@ import svg3 from '/src/assets/svgs/WhatSetsUs-3.svg';
 import svg4 from '/src/assets/svgs/WhatSetsUs-4.svg';
 import dropDownArrow from '/src/assets/svgs/dropDownArrow.svg';
 
-const fadeInUp = {
+const fadeInUp: Variants = {
   hidden: { opacity: 0, y: 40 },
   visible: {
     opacity: 1,
     y: 0,
     transition: {
-      duration: 1.0,
-      ease: 'easeOut',
+      duration: 0.8,
+      ease: 'easeOut' as const, // 👈 fixes the type error
     },
   },
 };
