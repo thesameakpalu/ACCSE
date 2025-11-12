@@ -21,26 +21,16 @@ function LandingpageBanner() {
 
     {/* Text Content */}
     <div className="absolute inset-0 z-20 flex flex-col pt-20 justify-center items-start gap-4 text-white px-[8%]">
-      <p
-        className="fade-in-up opacity-0 text-[#1DDA76] font-Roboto font-bold md:text-2xl lg:text-5xl 2xl:text-[120px] leading-tight"
-        style={{ animationDelay: '0.5s' }}
-      >
+      <p className="fade-in-up opacity-0 text-[#1DDA76] font-Roboto font-bold md:text-2xl lg:text-5xl 2xl:text-[120px] leading-tight"   style={{ animationDelay: '0.5s' }}  >
         Empowering
       </p>
 
-      <p
-        className="fade-in-up opacity-0 font-Roboto font-bold md:text-2xl lg:text-3xl 2xl:text-[90px] leading-snug"
-        style={{ animationDelay: '0.8s' }}
-      >
-        The Next Generation of Climate <br />
-        Innovators and Social <br />
+      <p className="fade-in-up opacity-0 font-Roboto font-bold text-xl xl:text-2xl 2xl:text-4xl leading-snug" style={{ animationDelay: '0.8s' }} >
+        The Next Generation of Climate  Innovators and Social <br />
         Entrepreneurs
       </p>
 
-      <p
-        className="fade-in-up opacity-0 font-Inter text-base lg:text-lg 2xl:text-3xl max-w-5xl leading-relaxed"
-        style={{ animationDelay: '1.0s' }}
-      >
+      <p className="fade-in-up opacity-0 font-Inter text-base lg:text-lg 2xl:text-3xl leading-relaxed"  style={{ animationDelay: '1.0s' }} >
         Developing profitable and locally appropriate solutions to climate change
         mitigation and adaptation.
       </p>

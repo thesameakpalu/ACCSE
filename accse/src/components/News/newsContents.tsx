@@ -45,7 +45,7 @@ function NewsContents() {
       <img src={img2} alt="Signing of Memorandum of Understanding(MOU)" className="w-full h-56 object-cover rounded-t-md" />
         <div className='flex flex-col justify-between flex-grow  border border-black/12 border-t-0 pb-5'>
       <p className="mt-3 text-lg font-medium font-Roboto p-3 ">
-        ACCSE and KUNTSFORD <br /> University college have <br /> announced the signing of a <br /> Memorandum of Understanding <br /> (MOU)
+        ACCSE and KNUTSFORD <br /> University college have <br /> announced the signing of a <br /> Memorandum of Understanding <br /> (MOU)
       </p>
        <Link to="/News/CSSE_KNUSTFORD">
       <button className="font-ISsans self-start mt-4 ml-3 text-sm text-white bg-[#E5A615] px-5 py-2 rounded-sm transition-transform duration-300 ease-in-out transform hover:scale-105">

@@ -179,96 +179,93 @@ const isHomeOrAboutPage =
 
         {/* Navigation */}
         <nav className={` rounded-full md:px-6 lg:px-8 md:py-2 lg:py-3 xl:py-3 xl:px-10 md:mr-3 lg:mr-5  
-            ${isFixed ? "bg-white" : (isHomeOrAboutPage ? "bg-black/30 " : "bg-white ")}
-          `}>
+            ${isFixed ? "bg-white" : (isHomeOrAboutPage ? "bg-black/30 " : "bg-white ")}   `}>
           <ul className={`flex lg:gap-x-10 md:gap-x-5 font-Lato  font-bold lg:text-xl md:text-base  relative 
               ${isFixed ? "text-black" : (isHomeOrAboutPage ? "text-white " : "text-black ")}
             `}>
-            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "" }, { name: "News", path: "/News" }, { name: "Documents", path: "" }, { name: "Regional Offices", path: "" } ].map((item) => (
-              <Link key={item.name} to={item.path}>
-                <li className={`relative group hover:text-[#EFA51E] ${location.pathname === item.path ? "" : ""}`}>
-                  {item.name}
-                  <span
-                    className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
-                        ${location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"}`}
-                  ></span>
-                </li>
-              </Link>
-            ))}
+            {[{ name: "Home", path: "/" }, { name: "About", path: "/About" }, { name: "Projects", path: "" }, { name: "News", path: "/News" }, { name: "Documents", path: "" }, { name: "Regional Offices", path: "" } ].map((item) =>
+        item.name === "Projects" ? (
+      <li key={item.name} className="relative group">
+        <span className="cursor-pointer hover:text-[#EFA51E]">
+          {item.name}
+          <span
+            className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
+            ${location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"}`}
+          ></span>
+        </span>
 
-            {/* Innovators Dropdown */}
-            {/* <li
-              // ref={dropdownRef}
-              className="relative group cursor-pointer"
-              // onMouseEnter={() => setOpenDropdown(true)}
-              // onMouseLeave={() => {
-              //   setOpenDropdown(false);
-              //   setOpenSubDropdown(null);
-              // }}
-            >
-              <div 
-                  onMouseEnter={() => setOpenDropdown(true)}
-                  onMouseLeave={() => {
-                    setOpenDropdown(false);
-                    setOpenSubDropdown(null);
-                  }}
-                  className="inline-block"
-                  >
 
-             {/* Trigger 
-         <div className="relative z-10 font-Lato font-bold hover:text-[#EFA51E]">Regional Offices</div>
+                <div className="absolute top-full left-0 w-full h-4 bg-transparent"></div>
 
-            {/* Invisible bridge 
-            <div className="absolute left-0 top-full h-6 w-full z-0"></div>
-              <span
-                className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
-                    ${location.pathname.startsWith("/innovators") ? "w-full" : "w-0 group-hover:w-full"}`}
-              ></span>
-              
-              {openDropdown && (
-                <div 
-                className={`absolute top-full z-20 ${isFixed ? 'mt-[26px]' : (isHomePage ? 'mt-2' : 'mt-[26px]')}`}
-                onMouseEnter={() => setOpenDropdown(true)} // keep open while over dropdown
-                onMouseLeave={() => {
-                  setOpenDropdown(false);
-                  setOpenSubDropdown(null);
-                }}
-                style={{ [isNearRightEdge ? "right" : "left"]: "0" }}
-              >
-                <ul className="absolute top-full bg-white text-sm shadow-lg border-[0.5px]  w-48"
-                    style={{ [isNearRightEdge ? "right" : "left"]: "0" }}>
-                  {Object.keys(cohorts).map((cohort) => (
-                    <li
-                      key={cohort}
-                      className="hover:bg-gray-100 px-4 py-2 cursor-pointer relative flex justify-between items-center"
-                      onMouseEnter={() => setOpenSubDropdown(cohort)}
-                    >
-                      {cohort}
-                      <FaChevronRight className="text-gray-500 w-3 h-3" />
-                      {openSubDropdown === cohort && (
-                        <ul className="absolute top-0 bg-white text-sm shadow-lg border-[0.5px] rounded-sm w-48"
-                            style={{ [isNearRightEdge ? "right" : "left"]: "100%" }}>
-                          {cohorts[cohort].map((group) => (
-                            <Link
-                              key={group}
-                              to={`/innovators/${cohort.replace(/\s+/g, "-").toLowerCase()}/${group.replace(/\s+/g, "-").toLowerCase()}`}
-                            >
-                              <li className="hover:bg-gray-100 hover:text-[#2075B6] px-4 py-2 flex justify-between items-center">
-                                {group}
-                                {/* <FaChevronRight className="text-gray-500" /> 
-                              </li> 
-                            </Link>
-                          ))}
-                        </ul>
-                      )}
-                    </li> 
-                  ))}
-                </ul>
-                </div>
-              )}
-              </div>
-            </li> */}
-          </ul>
+        {/* Dropdown */}
+        <ul
+          className={`absolute left-0 text-sm top-full font-normal text-black mt-2 w-72 bg-white shadow-md rounded-md opacity-0 group-hover:opacity-100 
+          group-hover:translate-y-2 transition-all duration-300 pointer-events-none group-hover:pointer-events-auto z-50`}
+        >
+          {[
+      {
+        name: "Young Climate Innovators Program (YCLIP)",
+        link: "https://yclip.ccseafrica.org/",
+        external: true,
+      },
+      {
+        name: "Rural Women Empowerment Program (RUWEP)",
+        link: "", // external website
+        external: true,
+      },
+      {
+        name: "Greening Schools Initiative",
+        link: " ",
+        external: false,
+      },
+      {
+        name: "Short Courses",
+        link: " ", // another external site
+        external: true,
+      },
+    ].map((item) =>
+      item.external ? (
+        // External link
+        <a
+          key={item.name}
+          href={item.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="block px-4 py-2 hover:bg-gray-100 hover:text-[#EFA51E] text-sm font-medium whitespace-normal"
+        >
+          {item.name}
+        </a>
+      ) : (
+        // Internal link
+        <Link
+          key={item.name}
+          to={item.link}
+          className="block px-4 py-2 hover:bg-gray-100 hover:text-[#EFA51E] text-sm font-medium whitespace-normal"
+        >
+          {item.name}
+        </Link>
+      )
+    )}
+        </ul>
+      </li>
+    ) : (
+      <Link key={item.name} to={item.path}>
+        <li
+          className={`relative group hover:text-[#EFA51E] ${
+            location.pathname === item.path ? "" : ""
+          }`}
+        >
+          {item.name}
+          <span
+            className={`absolute left-0 bottom-0 h-[2px] bg-[#EFA51E] transition-all duration-300 
+            ${location.pathname === item.path ? "w-full" : "w-0 group-hover:w-full"}`}
+          ></span>
+        </li>
+      </Link>
+    )
+  )}
+</ul>
+
         </nav>
 
         {/* Contact Us Button */}

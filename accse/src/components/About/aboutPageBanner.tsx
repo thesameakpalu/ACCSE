@@ -14,11 +14,11 @@ function AboutPageBanner() {
     <div className="absolute inset-0 w-full h-full bg-gradient-to-r from-black to-[#66666600]/0"></div>
 
     {/* Contents */}
-    <div className="absolute inset-0 z-20 flex gap-5 items-center justify-center pt-30 px-6 ml-10 text-white">
+    <div className="absolute inset-0 z-20 flex gap-5 items-center justify-center mt-30 px-6 ml-10 text-white">
       {/* Left Text */}
       <div className="w-1/2 flex justify-center items-center">
-        <p className=" fade-in-up opacity-0 md:text-2xl lg:text-4xl 2xl:text-[150px] mt-1 font-bold font-Inter" style={{ animationDelay: '0.5s' }}>
-          DONATE TODAY TO HELP <br className='md:hidden lg:block' /> SAFEGUARD AND REBUILD OUR <br className='md:hidden xl:block' /> ENVIRONMENT
+        <p className=" fade-in-up opacity-0 md:text-2xl lg:text-4xl 2xl:text-[120px] mt-1 font-bold font-Inter" style={{ animationDelay: '0.5s' }}>
+          DONATE TODAY TO HELP  SAFEGUARD AND REBUILD OUR ENVIRONMENT
         </p>
       </div>
 
