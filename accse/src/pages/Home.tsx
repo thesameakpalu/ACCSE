@@ -57,7 +57,7 @@ function Home() {
     </Helmet>
       
       <Header />
-        <div className="mainContainerHome pt-10">
+        <div className="mainContainerHome md:pt-10">
           
           <LandingpageBanner />
           <HomePageAboutSection />

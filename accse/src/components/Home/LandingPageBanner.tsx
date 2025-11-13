@@ -48,11 +48,11 @@ function LandingpageBanner() {
 
           {/* Mobile View */}
       <div id="hero-section-mobile" className="relative w-full block md:hidden">
-        <div className="relative w-full h-[85vh] overflow-hidden">
-          <img src={img} className="heroImg w-full h-[98%] object-cover"  fetchPriority="high" alt="Landing banner mobile" />
+        <div className="relative w-full h-[90vh] overflow-hidden">
+          <img src={img} className="heroImg w-full h-[100%] object-cover "  fetchPriority="high" alt="Landing banner mobile" />
           <img  src={TornPagemockup} className="absolute bottom-0 left-0 w-full h-[40px] object-cover z-10 pointer-events-none"  fetchPriority="high" alt="Torn edge mobile"  />
 
-            <div className="absolute inset-0 z-20 flex flex-col gap-4 items-start justify-center px-4 pt-12  text-white">
+            <div className="absolute inset-0 z-20 flex flex-col gap-4 items-start justify-center px-4 pt-20  text-white">
 
               <p className="fade-in-up opacity-0 text-3xl ms:text-4xl text-[#1DDA76] font-bold font-Roboto" style={{ animationDelay: '0.5s' }}>
                 Empowering
